@@ -59,7 +59,7 @@
             this.lblFooter.AutoSize = true;
             this.lblFooter.Font = new System.Drawing.Font("Black Ops One", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFooter.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblFooter.Location = new System.Drawing.Point(498, 21);
+            this.lblFooter.Location = new System.Drawing.Point(665, 30);
             this.lblFooter.Name = "lblFooter";
             this.lblFooter.Size = new System.Drawing.Size(238, 20);
             this.lblFooter.TabIndex = 0;
@@ -133,7 +133,7 @@
             // 
             this.lblAppFname.AutoSize = true;
             this.lblAppFname.Font = new System.Drawing.Font("Orbitron", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppFname.Location = new System.Drawing.Point(553, 245);
+            this.lblAppFname.Location = new System.Drawing.Point(665, 246);
             this.lblAppFname.Name = "lblAppFname";
             this.lblAppFname.Size = new System.Drawing.Size(156, 22);
             this.lblAppFname.TabIndex = 4;
@@ -144,7 +144,7 @@
             this.lblSubheading.AutoSize = true;
             this.lblSubheading.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubheading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblSubheading.Location = new System.Drawing.Point(499, 280);
+            this.lblSubheading.Location = new System.Drawing.Point(610, 280);
             this.lblSubheading.Name = "lblSubheading";
             this.lblSubheading.Size = new System.Drawing.Size(290, 15);
             this.lblSubheading.TabIndex = 5;
