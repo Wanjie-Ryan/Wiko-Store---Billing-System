@@ -113,7 +113,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Black Ops One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(12, 35);
+            this.lblUser.Location = new System.Drawing.Point(12, 37);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(45, 16);
             this.lblUser.TabIndex = 2;
