@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logics\UserLogics.cs" />
     <Compile Include="UI\formAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
