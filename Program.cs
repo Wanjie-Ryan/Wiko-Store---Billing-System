@@ -16,7 +16,7 @@ namespace Wiko_Store
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormUserDashboard());
+            Application.Run(new formAdmin());
         }
     }
 }

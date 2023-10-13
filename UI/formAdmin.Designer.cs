@@ -1,6 +1,6 @@
 ﻿namespace Wiko_Store
 {
-    partial class Form1
+    partial class formAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -84,6 +84,7 @@
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // categoryToolStripMenuItem
             // 
@@ -150,7 +151,7 @@
             this.lblSubheading.TabIndex = 5;
             this.lblSubheading.Text = "Billing And Inventory Management System.";
             // 
-            // Form1
+            // formAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +163,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.menuStripTop);
             this.MainMenuStrip = this.menuStripTop;
-            this.Name = "Form1";
+            this.Name = "formAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

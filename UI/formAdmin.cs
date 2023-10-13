@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.UI;
 
 namespace Wiko_Store
 {
-    public partial class Form1 : Form
+    public partial class formAdmin : Form
     {
-        public Form1()
+        public formAdmin()
         {
             InitializeComponent();
         }
@@ -20,6 +21,12 @@ namespace Wiko_Store
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsers Usersform = new FormUsers();
+            Usersform.Show();
         }
     }
 }
