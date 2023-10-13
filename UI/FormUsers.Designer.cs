@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsers));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.lblTop = new System.Windows.Forms.Label();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            this.lblTop = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
@@ -50,7 +50,6 @@
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.lblUserType = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
             this.lblUserID = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -75,17 +75,6 @@
             this.panelTop.Size = new System.Drawing.Size(1139, 48);
             this.panelTop.TabIndex = 0;
             // 
-            // lblTop
-            // 
-            this.lblTop.AutoSize = true;
-            this.lblTop.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTop.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTop.Location = new System.Drawing.Point(559, 19);
-            this.lblTop.Name = "lblTop";
-            this.lblTop.Size = new System.Drawing.Size(67, 18);
-            this.lblTop.TabIndex = 1;
-            this.lblTop.Text = "USERS";
-            // 
             // pictureBoxClose
             // 
             this.pictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -97,6 +86,17 @@
             this.pictureBoxClose.TabIndex = 2;
             this.pictureBoxClose.TabStop = false;
             this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
+            // lblTop
+            // 
+            this.lblTop.AutoSize = true;
+            this.lblTop.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTop.ForeColor = System.Drawing.Color.Transparent;
+            this.lblTop.Location = new System.Drawing.Point(559, 19);
+            this.lblTop.Name = "lblTop";
+            this.lblTop.Size = new System.Drawing.Size(67, 18);
+            this.lblTop.TabIndex = 1;
+            this.lblTop.Text = "USERS";
             // 
             // lblFirstName
             // 
@@ -283,17 +283,6 @@
             this.lblUserType.Text = "User Type";
             this.lblUserType.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // txtUserID
-            // 
-            this.txtUserID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUserID.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtUserID.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(110, 62);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.ReadOnly = true;
-            this.txtUserID.Size = new System.Drawing.Size(130, 22);
-            this.txtUserID.TabIndex = 20;
-            // 
             // lblUserID
             // 
             this.lblUserID.AutoSize = true;
@@ -385,6 +374,17 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
+            // txtUserID
+            // 
+            this.txtUserID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUserID.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtUserID.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.Location = new System.Drawing.Point(110, 62);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.ReadOnly = true;
+            this.txtUserID.Size = new System.Drawing.Size(130, 22);
+            this.txtUserID.TabIndex = 20;
+            // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,7 +455,6 @@
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.ComboBox cmbUserType;
         private System.Windows.Forms.Label lblUserType;
-        private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.TextBox txtSearch;
@@ -464,5 +463,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtUserID;
     }
 }
