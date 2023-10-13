@@ -46,24 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formAdmin.cs">
+    <Compile Include="UI\formAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAdmin.Designer.cs">
+    <Compile Include="UI\formAdmin.Designer.cs">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUserDashboard.cs">
+    <Compile Include="UI\FormUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUserDashboard.Designer.cs">
+    <Compile Include="UI\FormUserDashboard.Designer.cs">
       <DependentUpon>FormUserDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formAdmin.resx">
+    <Compile Include="UI\FormUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUserDashboard.resx">
+    <EmbeddedResource Include="UI\FormUserDashboard.resx">
       <DependentUpon>FormUserDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -75,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
