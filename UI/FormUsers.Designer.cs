@@ -52,8 +52,16 @@
             this.lblUserType = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.lblUserID = new System.Windows.Forms.Label();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -94,7 +102,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(10, 124);
+            this.lblFirstName.Location = new System.Drawing.Point(12, 98);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(80, 15);
             this.lblFirstName.TabIndex = 1;
@@ -104,7 +112,7 @@
             // 
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(110, 117);
+            this.txtFirstName.Location = new System.Drawing.Point(110, 98);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(130, 22);
             this.txtFirstName.TabIndex = 2;
@@ -133,7 +141,7 @@
             // 
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(110, 225);
+            this.txtUsername.Location = new System.Drawing.Point(110, 212);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(130, 22);
             this.txtUsername.TabIndex = 6;
@@ -142,7 +150,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(11, 232);
+            this.lblUsername.Location = new System.Drawing.Point(11, 212);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(75, 15);
             this.lblUsername.TabIndex = 5;
@@ -152,7 +160,7 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(110, 191);
+            this.txtEmail.Location = new System.Drawing.Point(110, 176);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(130, 22);
             this.txtEmail.TabIndex = 8;
@@ -161,7 +169,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(12, 198);
+            this.lblEmail.Location = new System.Drawing.Point(12, 176);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(43, 15);
             this.lblEmail.TabIndex = 7;
@@ -171,7 +179,7 @@
             // 
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastName.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(110, 154);
+            this.txtLastName.Location = new System.Drawing.Point(110, 136);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(130, 22);
             this.txtLastName.TabIndex = 10;
@@ -180,7 +188,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(11, 161);
+            this.lblLastName.Location = new System.Drawing.Point(11, 136);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(79, 15);
             this.lblLastName.TabIndex = 9;
@@ -190,7 +198,7 @@
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(110, 295);
+            this.txtAddress.Location = new System.Drawing.Point(110, 293);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(130, 62);
@@ -200,7 +208,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(12, 295);
+            this.lblAddress.Location = new System.Drawing.Point(11, 295);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(63, 15);
             this.lblAddress.TabIndex = 11;
@@ -210,7 +218,7 @@
             // 
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(110, 260);
+            this.txtContact.Location = new System.Drawing.Point(110, 249);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(130, 22);
             this.txtContact.TabIndex = 14;
@@ -219,7 +227,7 @@
             // 
             this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContact.Location = new System.Drawing.Point(12, 267);
+            this.lblContact.Location = new System.Drawing.Point(12, 249);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(59, 15);
             this.lblContact.TabIndex = 13;
@@ -280,7 +288,7 @@
             this.txtUserID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserID.Cursor = System.Windows.Forms.Cursors.No;
             this.txtUserID.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(112, 71);
+            this.txtUserID.Location = new System.Drawing.Point(110, 62);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.ReadOnly = true;
             this.txtUserID.Size = new System.Drawing.Size(130, 22);
@@ -290,12 +298,92 @@
             // 
             this.lblUserID.AutoSize = true;
             this.lblUserID.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID.Location = new System.Drawing.Point(12, 78);
+            this.lblUserID.Location = new System.Drawing.Point(12, 62);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(56, 15);
             this.lblUserID.TabIndex = 19;
             this.lblUserID.Text = "User ID";
             this.lblUserID.Click += new System.EventHandler(this.label1_Click_2);
+            // 
+            // dgvUsers
+            // 
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.Location = new System.Drawing.Point(459, 103);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.Size = new System.Drawing.Size(627, 293);
+            this.dgvUsers.TabIndex = 21;
+            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(562, 67);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(343, 22);
+            this.txtSearch.TabIndex = 23;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(479, 69);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(55, 15);
+            this.lblSearch.TabIndex = 22;
+            this.lblSearch.Text = "Search";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Location = new System.Drawing.Point(459, 442);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(85, 31);
+            this.btnAdd.TabIndex = 24;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.BurlyWood;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(562, 442);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 31);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Location = new System.Drawing.Point(668, 442);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(85, 31);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.Info;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(768, 442);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(85, 31);
+            this.btnClear.TabIndex = 27;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // FormUsers
             // 
@@ -303,6 +391,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1139, 506);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.txtUserID);
             this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.cmbUserType);
@@ -331,6 +426,7 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,5 +457,12 @@
         private System.Windows.Forms.Label lblUserType;
         private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnClear;
     }
 }
