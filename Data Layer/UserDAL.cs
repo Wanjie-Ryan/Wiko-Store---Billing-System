@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.Logics;
 
 namespace Wiko_Store.Data_Layer
 {
@@ -53,6 +54,46 @@ namespace Wiko_Store.Data_Layer
         }
 
         //inserting data to the database
+
+        public bool Insert(UserLogics c)
+        {
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                string sql = "INSERT INTO tbl_users(first_name, last_name,email,username,password,contact,address,gender,user_type,added_date,added_by) VALUES (@first_name, @last_name,email, @username, @password, @contact, @address, @gender, @user_type, @added_date, @added_by)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+                cmd.Parameters.AddWithValue("@last_name", c.last_name);
+                cmd.Parameters.AddWithValue("@email", c.email);   
+                cmd.Parameters.AddWithValue("@username", c.username);
+                cmd.Parameters.AddWithValue("@password", c.password);
+                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+
+
+
+
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isSuccess;
+
+        }
 
 
 
