@@ -164,6 +164,19 @@ namespace Wiko_Store.Data_Layer
             return isSuccess;
         }
 
+        //deleting data from the database
+
+        public bool Delete(UserLogics c)
+        {
+            bool isSuccess = false;
+
+
+
+
+
+            return isSuccess;
+        }
+
 
 
 
