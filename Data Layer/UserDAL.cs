@@ -4,10 +4,13 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wiko_Store.Logics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Wiko_Store.Data_Layer
 {
@@ -70,10 +73,25 @@ namespace Wiko_Store.Data_Layer
                 cmd.Parameters.AddWithValue("@email", c.email);   
                 cmd.Parameters.AddWithValue("@username", c.username);
                 cmd.Parameters.AddWithValue("@password", c.password);
-                cmd.Parameters.AddWithValue("@first_name", c.first_name);
-                cmd.Parameters.AddWithValue("@first_name", c.first_name);
-                cmd.Parameters.AddWithValue("@first_name", c.first_name);
-                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+                cmd.Parameters.AddWithValue("@contact", c.contact);
+                cmd.Parameters.AddWithValue("@address", c.address);
+                cmd.Parameters.AddWithValue("@gender", c.gender);
+                cmd.Parameters.AddWithValue("@user_type", c.user_type);
+                cmd.Parameters.AddWithValue("@added_date", c.added_date);
+                cmd.Parameters.AddWithValue("@added_by", c.added_by);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if(rows>0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
 
 
 
@@ -93,6 +111,57 @@ namespace Wiko_Store.Data_Layer
 
             return isSuccess;
 
+        }
+
+        public bool Update(UserLogics c)
+        {
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                string sql = "Update tbl_users SET first_name =@first_name, last_name = @last_name,email = @email ,username = @username ,password = @password ,contact = @contact ,address =@address ,gender = @gender ,user_type = @user_type ,added_date = @added_date,added_by = @added_by WHERE id=@id ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@first_name", c.first_name);
+                cmd.Parameters.AddWithValue("@last_name", c.last_name);
+                cmd.Parameters.AddWithValue("@email", c.email);
+                cmd.Parameters.AddWithValue("@username", c.username);
+                cmd.Parameters.AddWithValue("@password", c.password);
+                cmd.Parameters.AddWithValue("@contact", c.contact);
+                cmd.Parameters.AddWithValue("@address", c.address);
+                cmd.Parameters.AddWithValue("@gender", c.gender);
+                cmd.Parameters.AddWithValue("@user_type", c.user_type);
+                cmd.Parameters.AddWithValue("@added_date", c.added_date);
+                cmd.Parameters.AddWithValue("@added_by", c.added_by);
+                cmd.Parameters.AddWithValue("@id", c.id);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                conn.Close();
+                    
+            }
+
+
+            return isSuccess;
         }
 
 
