@@ -67,6 +67,22 @@ namespace Wiko_Store.UI
             userlogics.added_date = DateTime.Now;
             userlogics.added_by = 1;
             userlogics.password = txtPwd.Text;
+
+            //inserting data to the database using the userDAL class
+
+            bool success = userDAL.Insert(userlogics);
+
+            //if the data is successfully inserted then the value of success will be true else it will be false
+
+            if(success == true)
+            {
+                MessageBox.Show("User has been created successFully");
+            }
+            else
+            {
+                MessageBox.Show("Failed to add new user");
+
+            }
         }
     }
 }
