@@ -169,6 +169,28 @@ namespace Wiko_Store.UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //getting user id from the form
+
+            c.id = Convert.ToInt32(txtUserID.Text);
+
+            bool isSuccess = userDAL.Delete(c);
+
+            if (isSuccess == true)
+            {
+                MessageBox.Show("User deleted successfully");
+                Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete user");
+            }
+
+            //refresh the data grid view
+
+            DataTable dt = userDAL.Select();
+
+            dgvUsers.DataSource = dt;
 
         }
     }

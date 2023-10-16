@@ -167,7 +167,7 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
-                string sql = "DELETE FROM tbl_users WHERE id=@id";
+                string sql = "DELETE FROM users WHERE id=@id";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
