@@ -19,7 +19,8 @@ namespace Wiko_Store.UI
             InitializeComponent();
         }
 
-        UserLogics userlogics = new UserLogics();
+        //UserLogics userlogics = new UserLogics();
+        UserLogics c = new UserLogics();
         UserDAL userDAL = new UserDAL();
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -56,21 +57,22 @@ namespace Wiko_Store.UI
         {
             // getting data from textboxes
 
-            userlogics.first_name = txtFirstName.Text;
-            userlogics.last_name = txtLastName.Text;
-            userlogics.email = txtEmail.Text;
-            userlogics.username = txtUsername.Text;
-            userlogics.contact = txtContact.Text;
-            userlogics.address = txtAddress.Text;
-            userlogics.gender = cmbGender.Text;
-            userlogics.user_type = cmbUserType.Text;
-            userlogics.added_date = DateTime.Now;
-            userlogics.added_by = 1;
-            userlogics.password = txtPwd.Text;
+           // c.id = int.Parse(txtUserID.Text);
+            c.first_name = txtFirstName.Text;
+            c.last_name = txtLastName.Text;
+            c.email = txtEmail.Text;
+            c.username = txtUsername.Text;
+            c.contact = txtContact.Text;
+            c.address = txtAddress.Text;
+            c.gender = cmbGender.Text;
+            c.user_type = cmbUserType.Text;
+            c.added_date = DateTime.Now;
+            c.added_by = 1;
+            c.password = txtPwd.Text;
 
             //inserting data to the database using the userDAL class
 
-            bool success = userDAL.Insert(userlogics);
+            bool success = userDAL.Insert(c);
 
             //if the data is successfully inserted then the value of success will be true else it will be false
 

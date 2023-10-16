@@ -31,7 +31,7 @@ namespace Wiko_Store.Data_Layer
             try
             {
                 //sql query to fetch data from the database
-                string sql = "SELECT * FROM tbl_users";
+                string sql = "SELECT * FROM users";
                 //for executing command
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //getting data from database
@@ -65,26 +65,27 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
-                string sql = "INSERT INTO tbl_users(first_name, last_name,email,username,password,contact,address,gender,user_type,added_date,added_by) VALUES (@first_name, @last_name,email, @username, @password, @contact, @address, @gender, @user_type, @added_date, @added_by)";
+
+                string sql = "INSERT INTO users (first_name, last_name, email, username, contact, address, gender, user_type, added_date, added_by, password) VALUES (@first_name, @last_name, @email, @username, @contact, @address, @gender, @user_type, @added_date, @added_by, @password)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@first_name", c.first_name);
                 cmd.Parameters.AddWithValue("@last_name", c.last_name);
-                cmd.Parameters.AddWithValue("@email", c.email);   
+                cmd.Parameters.AddWithValue("@email", c.email);
                 cmd.Parameters.AddWithValue("@username", c.username);
-                cmd.Parameters.AddWithValue("@password", c.password);
                 cmd.Parameters.AddWithValue("@contact", c.contact);
                 cmd.Parameters.AddWithValue("@address", c.address);
                 cmd.Parameters.AddWithValue("@gender", c.gender);
                 cmd.Parameters.AddWithValue("@user_type", c.user_type);
                 cmd.Parameters.AddWithValue("@added_date", c.added_date);
                 cmd.Parameters.AddWithValue("@added_by", c.added_by);
+                cmd.Parameters.AddWithValue("@password", c.password);
 
                 conn.Open();
 
                 int rows = cmd.ExecuteNonQuery();
 
-                if(rows>0)
+                if (rows > 0)
                 {
                     isSuccess = true;
                 }
@@ -92,17 +93,10 @@ namespace Wiko_Store.Data_Layer
                 {
                     isSuccess = false;
                 }
-
-
-
-
-
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
             finally
             {
@@ -110,7 +104,6 @@ namespace Wiko_Store.Data_Layer
             }
 
             return isSuccess;
-
         }
 
         public bool Update(UserLogics c)
