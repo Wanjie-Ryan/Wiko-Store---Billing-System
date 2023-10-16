@@ -125,6 +125,7 @@ namespace Wiko_Store.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            c.id = Convert.ToInt32(txtUserID.Text);
             c.first_name = txtFirstName.Text;
             c.last_name = txtLastName.Text;
             c.email = txtEmail.Text;
