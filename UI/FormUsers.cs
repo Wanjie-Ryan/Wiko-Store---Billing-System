@@ -86,7 +86,14 @@ namespace Wiko_Store.UI
                 MessageBox.Show("Failed to add new user");
 
             }
+
+            DataTable dt = userDAL.Select();
+
+            dgvUsers.DataSource = dt;
+
         }
+
+
 
         public void Clear()
         {
@@ -105,6 +112,14 @@ namespace Wiko_Store.UI
         {
             Clear();
           
+        }
+
+        private void FormUsers_Load(object sender, EventArgs e)
+        {
+            DataTable dt = userDAL.Select();
+
+            dgvUsers.DataSource = dt;
+
         }
     }
 }
