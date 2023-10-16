@@ -112,7 +112,7 @@ namespace Wiko_Store.Data_Layer
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "Update tbl_users SET first_name =@first_name, last_name = @last_name,email = @email ,username = @username ,password = @password ,contact = @contact ,address =@address ,gender = @gender ,user_type = @user_type ,added_date = @added_date,added_by = @added_by WHERE id=@id ";
+                string sql = "Update users SET first_name =@first_name, last_name = @last_name,email = @email ,username = @username ,password = @password ,contact = @contact ,address =@address ,gender = @gender ,user_type = @user_type ,added_date = @added_date,added_by = @added_by WHERE id=@id ";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
