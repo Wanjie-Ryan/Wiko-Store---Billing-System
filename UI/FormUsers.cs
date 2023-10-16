@@ -79,12 +79,32 @@ namespace Wiko_Store.UI
             if(success == true)
             {
                 MessageBox.Show("User has been created successFully");
+                Clear();
             }
             else
             {
                 MessageBox.Show("Failed to add new user");
 
             }
+        }
+
+        public void Clear()
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtEmail.Text = "";
+            txtUsername.Text = "";
+            txtContact.Text = "";
+            txtAddress.Text = "";
+            cmbGender.Text = "";
+            cmbUserType.Text = "";
+            txtPwd.Text = "";
+
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+          
         }
     }
 }
