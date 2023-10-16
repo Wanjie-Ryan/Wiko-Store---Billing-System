@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Wiko_Store.Data_Layer;
 using Wiko_Store.Logics;
@@ -137,6 +138,38 @@ namespace Wiko_Store.UI
             c.added_date = DateTime.Now;
             c.added_by = 1;
             c.password = txtPwd.Text;
+
+            //updating data in the database
+
+
+            bool isSuccess = userDAL.Update(c);
+
+            if (isSuccess == true)
+            {
+                MessageBox.Show("User Details have been updated successfully");
+                Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to update user details.");
+
+            }
+
+            //refresh the data grid view
+
+            DataTable dt = userDAL.Select();
+
+            dgvUsers.DataSource = dt;
+
+
+
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
