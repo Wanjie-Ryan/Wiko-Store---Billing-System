@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Layer\LoginDAL.cs" />
     <Compile Include="Data Layer\UserDAL.cs" />
+    <Compile Include="Logics\LoginLogics1.cs" />
     <Compile Include="Logics\UserLogics.cs" />
     <Compile Include="UI\formAdmin.cs">
       <SubType>Form</SubType>
