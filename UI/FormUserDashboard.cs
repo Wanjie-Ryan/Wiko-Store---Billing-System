@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.UI;
 
 namespace Wiko_Store
 {
@@ -15,6 +16,11 @@ namespace Wiko_Store
         public FormUserDashboard()
         {
             InitializeComponent();
+        }
+
+        private void FormUserDashboard_Load(object sender, EventArgs e)
+        {
+            lblLoggedInUser.Text = LoginForm.loggedIn;
         }
     }
 }

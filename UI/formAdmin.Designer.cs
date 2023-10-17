@@ -126,9 +126,8 @@
             this.lblLoggedInUser.Font = new System.Drawing.Font("Black Ops One", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Underline | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInUser.Location = new System.Drawing.Point(63, 35);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(141, 19);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 19);
             this.lblLoggedInUser.TabIndex = 3;
-            this.lblLoggedInUser.Text = "Shalom Brother";
             // 
             // lblAppFname
             // 

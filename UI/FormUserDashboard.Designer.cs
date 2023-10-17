@@ -78,9 +78,8 @@
             this.lblLoggedInUser.Font = new System.Drawing.Font("Black Ops One", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Underline | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInUser.Location = new System.Drawing.Point(63, 40);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(141, 19);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 19);
             this.lblLoggedInUser.TabIndex = 5;
-            this.lblLoggedInUser.Text = "Shalom Brother";
             // 
             // lblUser
             // 
@@ -150,6 +149,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormUserDashboard_Load);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
             this.panelFooter.ResumeLayout(false);

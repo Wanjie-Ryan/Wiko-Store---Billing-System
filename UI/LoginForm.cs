@@ -21,7 +21,7 @@ namespace Wiko_Store.UI
 
         LoginLogics1 l = new LoginLogics1();
         LoginDAL loginDAL = new LoginDAL();
-        static string loggedIn;
+        public static string loggedIn;
 
         private void label2_Click(object sender, EventArgs e)
         {

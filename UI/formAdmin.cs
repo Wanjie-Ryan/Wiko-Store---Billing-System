@@ -20,7 +20,7 @@ namespace Wiko_Store
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lblLoggedInUser.Text = LoginForm.loggedIn;
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
