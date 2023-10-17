@@ -211,7 +211,7 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
-                string sql = "SELECT * FROM users WHERE id LIKE '%" +keyword + "%' OR first_name LIKE '%" +keyword + "%' OR username LIKE '%" +keyword+ "%' ";
+                string sql = "SELECT * FROM users WHERE id LIKE '%" +keyword + "%' OR first_name LIKE '%" +keyword + "%' OR last_name LIKE '%" +keyword+ "%' OR username LIKE '%" +keyword+ "%' ";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

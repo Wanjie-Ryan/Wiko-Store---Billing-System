@@ -193,5 +193,31 @@ namespace Wiko_Store.UI
             dgvUsers.DataSource = dt;
 
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            // get keyword from the textbox
+
+            string keyword = txtSearch.Text;
+
+            //check if keyword has value or not
+
+            if (keyword != null)
+            {
+                //show users based on keywords
+                DataTable dt = userDAL.Search(keyword);
+                dgvUsers.DataSource = dt;
+
+
+            }
+            else
+            {
+                //show users on the data table
+
+                DataTable dt = userDAL.Select();
+
+                dgvUsers.DataSource = dt;
+            }
+        }
     }
 }
