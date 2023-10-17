@@ -46,6 +46,13 @@ namespace Wiko_Store.UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            // getting the username of the logged in user
+
+            string loggedUser = LoginForm.loggedIn;
+
+
+
             // getting data from textboxes
 
             // c.id = int.Parse(txtUserID.Text);
