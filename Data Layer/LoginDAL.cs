@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,30 @@ namespace Wiko_Store.Data_Layer
                 cmd.Parameters.AddWithValue("@username", l.username);
                 cmd.Parameters.AddWithValue("@password", l.password);
                 cmd.Parameters.AddWithValue("@user_type", l.userType);
+
+                //sql data adapter to get data from database
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable(); 
+
+                adapter.Fill(dt);
+
+                //checking the rows in the datatable
+
+                if(dt.Rows.Count > 0)
+                {
+                    //login successfull
+                    isSuccess = true;
+
+                }
+                else
+                {
+                    //login failed
+                    isSuccess = false;
+
+                }
+
 
             }
             catch(Exception ex)
