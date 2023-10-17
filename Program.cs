@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.UI;
 
 namespace Wiko_Store
 {
@@ -16,7 +17,7 @@ namespace Wiko_Store
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formAdmin());
+            Application.Run(new LoginForm());
         }
     }
 }

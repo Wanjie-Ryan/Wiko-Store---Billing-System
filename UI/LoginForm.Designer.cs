@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -37,7 +38,9 @@
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.PicBoxClose = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogin
@@ -53,7 +56,7 @@
             this.panelLogin.Controls.Add(this.lblHeader);
             this.panelLogin.Location = new System.Drawing.Point(61, 37);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(351, 365);
+            this.panelLogin.Size = new System.Drawing.Size(364, 365);
             this.panelLogin.TabIndex = 0;
             // 
             // lblHeader
@@ -139,18 +142,33 @@
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             // 
+            // PicBoxClose
+            // 
+            this.PicBoxClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PicBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxClose.Image")));
+            this.PicBoxClose.Location = new System.Drawing.Point(448, 12);
+            this.PicBoxClose.Name = "PicBoxClose";
+            this.PicBoxClose.Size = new System.Drawing.Size(41, 28);
+            this.PicBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBoxClose.TabIndex = 1;
+            this.PicBoxClose.TabStop = false;
+            this.PicBoxClose.Click += new System.EventHandler(this.PicBoxClose_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(492, 456);
+            this.Controls.Add(this.PicBoxClose);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,5 +184,6 @@
         private System.Windows.Forms.ComboBox cmbUserType;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox PicBoxClose;
     }
 }
