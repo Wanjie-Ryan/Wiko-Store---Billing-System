@@ -28,5 +28,12 @@ namespace Wiko_Store
             FormUsers Usersform = new FormUsers();
             Usersform.Show();
         }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCategories categoriesform = new FormCategories();
+            categoriesform.Show();
+
+        }
     }
 }
