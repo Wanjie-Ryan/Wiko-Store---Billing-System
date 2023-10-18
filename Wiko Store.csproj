@@ -57,6 +57,12 @@
     <Compile Include="UI\formAdmin.Designer.cs">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormCategories.Designer.cs">
+      <DependentUpon>FormCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="UI\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormCategories.resx">
+      <DependentUpon>FormCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormUserDashboard.resx">
       <DependentUpon>FormUserDashboard.cs</DependentUpon>
