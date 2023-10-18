@@ -65,7 +65,9 @@ namespace Wiko_Store.UI
             c.gender = cmbGender.Text;
             c.user_type = cmbUserType.Text;
             c.added_date = DateTime.Now;
-            c.added_by = 1;
+            UserLogics userid = userDAL.GetIDFromUsername(loggedUser);
+
+            c.added_by = userid.id;
             c.password = txtPwd.Text;
 
             //inserting data to the database using the userDAL class
