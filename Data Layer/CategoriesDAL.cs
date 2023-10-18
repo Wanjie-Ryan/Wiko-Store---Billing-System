@@ -59,6 +59,22 @@ namespace Wiko_Store.Data_Layer
 
                 SqlCommand cmd = new SqlCommand(sql,conn);
 
+                cmd.Parameters.AddWithValue("@title", l.title);
+                cmd.Parameters.AddWithValue("@description", l.description);
+                cmd.Parameters.AddWithValue("@added_date", l.added_date);
+                cmd.Parameters.AddWithValue("@added_by", l.added_by);
+
+
+                conn.Open();
+                int rows =  cmd.ExecuteNonQuery();
+                if(rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
 
             }
             catch(Exception ex)
@@ -71,6 +87,92 @@ namespace Wiko_Store.Data_Layer
                 conn.Close();
             }
 
+            return isSuccess;
+
+        }
+
+        public Boolean Update(CategoryLogics l)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                string sql = "UPDATE tbl_categories SET title = @title, description = @description, added_date = @added_date, added_by = @added_by WHERE id =@id";
+
+                SqlCommand cmd = new SqlCommand(sql,conn);
+
+                cmd.Parameters.AddWithValue("@title", l.title);
+                cmd.Parameters.AddWithValue("@description", l.description);
+                cmd.Parameters.AddWithValue("@added_date", l.added_date);
+                cmd.Parameters.AddWithValue("@added_by", l.added_by);
+
+                conn.Open();
+                
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isSuccess;
+
+
+
+        }
+
+        public bool Delete (CategoryLogics l)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                string sql = "DELETE FROM tbl_categories WHERE  id=@id";
+
+                SqlCommand cmd = new SqlCommand(sql,conn);
+
+                cmd.Parameters.AddWithValue("@id", l.id);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+
+            }
+            catch(Exception ex )
+            {
+                MessageBox.Show (ex.Message);
+
+            }
+            finally
+            {
+                conn.Close();
+            }
             return isSuccess;
 
         }
