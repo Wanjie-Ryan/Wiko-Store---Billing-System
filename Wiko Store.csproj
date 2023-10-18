@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Layer\CategoriesDAL.cs" />
     <Compile Include="Data Layer\LoginDAL.cs" />
     <Compile Include="Data Layer\UserDAL.cs" />
     <Compile Include="Logics\CategoryLogics.cs" />
