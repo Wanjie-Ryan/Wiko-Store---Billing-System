@@ -57,6 +57,11 @@ namespace Wiko_Store.UI
             {
                 MessageBox.Show("New Category Successfully Inserted");
                 Clear();
+
+                //Refreshing the datagrid view
+
+                DataTable dt = cdal.Select();
+                dgvCategories.DataSource = dt;
             }
             else
             {
@@ -88,6 +93,11 @@ namespace Wiko_Store.UI
 
         private void FormCategories_Load(object sender, EventArgs e)
         {
+            // to display all the added categories in the datagrid view
+
+            DataTable dt = cdal.Select();
+            dgvCategories.DataSource = dt;
+
 
         }
     }
