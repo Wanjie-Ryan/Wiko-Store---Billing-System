@@ -28,8 +28,10 @@ namespace Wiko_Store.UI
         }
         public void Clear()
         {
+            txtCategoryID.Text = "";
             txtTitle.Text = "";
             txtDesc.Text = "";
+            txtSearch.Text = "";
 
         }
 
@@ -80,6 +82,11 @@ namespace Wiko_Store.UI
         }
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCategories_Load(object sender, EventArgs e)
         {
 
         }
