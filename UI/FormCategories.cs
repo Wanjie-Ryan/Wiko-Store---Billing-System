@@ -21,9 +21,16 @@ namespace Wiko_Store.UI
         
         CategoryLogics cl = new CategoryLogics();
         CategoriesDAL cdal =  new CategoriesDAL();
+        UserDAL uDal = new UserDAL();
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void Clear()
+        {
+            txtTitle.Text = "";
+            txtDesc.Text = "";
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -32,6 +39,15 @@ namespace Wiko_Store.UI
 
             cl.title = txtTitle.Text;
             cl.description = txtDesc.Text;
+            cl.added_date = DateTime.Now;
+
+            //getting id of logged in user
+
+            string loggedUser = LoginForm.loggedIn;
+
+            UserLogics usr = uDal.GetIDFromUsername(loggedUser);
+
+
 
             bool isSuccess = cdal.InsertCategory(cl);
 
@@ -45,20 +61,27 @@ namespace Wiko_Store.UI
                 MessageBox.Show("Failed to add new category");
             }   
 
-
-
-        }
-
-        public void Clear()
-        {
-            txtTitle.Text = "";
-            txtDesc.Text = "";
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
