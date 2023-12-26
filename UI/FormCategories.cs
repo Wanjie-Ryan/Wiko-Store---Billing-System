@@ -100,5 +100,18 @@ namespace Wiko_Store.UI
 
 
         }
+
+        private void dgvCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // finding the row index of the row that has been clicked
+
+            int RowIndex = e.RowIndex;
+
+            txtCategoryID.Text = dgvCategories.Rows[RowIndex].Cells[0].Value.ToString();
+            txtTitle.Text = dgvCategories.Rows[RowIndex].Cells[1].Value.ToString();
+            txtDesc.Text = dgvCategories.Rows[RowIndex].Cells[2].Value.ToString();
+
+
+        }
     }
 }

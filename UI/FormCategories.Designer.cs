@@ -227,6 +227,7 @@
             this.dgvCategories.Size = new System.Drawing.Size(627, 293);
             this.dgvCategories.TabIndex = 32;
             this.dgvCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellContentClick);
+            this.dgvCategories.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCategories_RowHeaderMouseClick);
             // 
             // FormCategories
             // 
