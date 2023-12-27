@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.Logics;
 
 namespace Wiko_Store.Data_Layer
 {
@@ -65,6 +66,51 @@ namespace Wiko_Store.Data_Layer
 
 
             return dt;
+        }
+
+        // updating data in the database
+
+        public bool Insert(ProductsLogic p)
+        {
+            // creating boolean variable and set default value to false
+            bool isSuccess = false;
+
+            // SQL connection for the database
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+
+                string sql = "INSERT INTO tbl_categories (name, category, description, rate, quantity, added_date, added_by) VALUES (@name, @category, @description, @rate, @quantity, @added_date, @added_by)  ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@name", p.name);
+                cmd.Parameters.AddWithValue("@category", p.category);
+                cmd.Parameters.AddWithValue("@description", p.description);
+                cmd.Parameters.AddWithValue("@rate", p.rate);
+                cmd.Parameters.AddWithValue("@quantity", p.quantity);
+                cmd.Parameters.AddWithValue("@added_date", p.added_date);
+                cmd.Parameters.AddWithValue("@added_by", p.added_by);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isSuccess;
+
         }
 
     }
