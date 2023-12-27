@@ -138,9 +138,31 @@ namespace Wiko_Store.Data_Layer
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@name", p.name);
+                cmd.Parameters.AddWithValue("@category", p.category);
+                cmd.Parameters.AddWithValue("@description", p.description);
+                cmd.Parameters.AddWithValue("@rate", p.rate);
+                cmd.Parameters.AddWithValue("@quantity", p.quantity);
+                cmd.Parameters.AddWithValue("@added_date", p.added_date);
+                cmd.Parameters.AddWithValue("@added_by", p.added_by);
+                cmd.Parameters.AddWithValue("@id", p.id);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if(rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+
+                }
+
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -154,6 +176,8 @@ namespace Wiko_Store.Data_Layer
 
             return isSuccess;
         }
+
+        
 
     }
 }
