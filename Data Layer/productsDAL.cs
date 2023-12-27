@@ -177,6 +177,33 @@ namespace Wiko_Store.Data_Layer
             return isSuccess;
         }
 
+        public bool Delete(ProductsLogic p)
+        {
+            bool isSuccess = true;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try 
+            { 
+
+                
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
+            return isSuccess;
+
+        }
+
         
 
     }
