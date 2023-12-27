@@ -177,5 +177,47 @@ namespace Wiko_Store.Data_Layer
             return isSuccess;
 
         }
+
+        public DataTable Search(string keywords)
+        {
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // creating datatable to hold data from DB to hold data temporarily
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // sql query to get the data from the DB
+
+                string sql = "SELECT * FROM tbl_categories WHERE id LIKE '%" +keywords+ "%' OR title LIKE '%" +keywords+ "%' OR description LIKE '%" +keywords+ "%'";
+
+                // creating sql command to execute the query
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // getting data from the database
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                // passing values from adapter to datatable
+
+                conn.Open();
+                adapter.Fill(dt);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+
+        }
     }
 }
