@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -77,6 +78,40 @@ namespace Wiko_Store.UI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+            // getting the values from the textboxes
+
+            cl.id = int.Parse(txtCategoryID.Text);
+            cl.title = txtTitle.Text;
+            cl.description = txtDesc.Text;
+            cl.added_date = DateTime.Now;
+
+            //getting id of logged in user
+
+            string loggedUser = LoginForm.loggedIn;
+
+            UserLogics usr = uDal.GetIDFromUsername(loggedUser);
+
+            cl.added_by = usr.id;
+
+            // creating boolean variable to check if the category is updated or not
+
+            bool isSuccess = cdal.Update(cl);
+            
+            if(isSuccess == true)
+            {
+                MessageBox.Show("Category Successfully Updated");
+                Clear();
+
+                // refreshing the datagrid view
+
+                DataTable dt = cdal.Select();
+                dgvCategories.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to update category");
+            }
 
 
         }
