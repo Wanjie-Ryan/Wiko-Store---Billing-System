@@ -78,6 +78,12 @@ namespace Wiko_Store.UI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // check if a row has been selected in the datagrid view
+
+            if(dgvCategories.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a category from the list before attempting to delete.", "No category was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             // getting the values from the textboxes
 
@@ -151,6 +157,16 @@ namespace Wiko_Store.UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
+            // check if a row has been selected in the datagrid view
+
+            if (dgvCategories.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a category from the list before attempting to delete.", "No Category Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return; // Exit the method if no row is selected
+            }
+
+
             // getting the id of the category from which we want to delete
 
             cl.id = int.Parse(txtCategoryID.Text);
