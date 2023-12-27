@@ -35,5 +35,11 @@ namespace Wiko_Store
             categoriesform.Show();
 
         }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProducts products = new FormProducts();
+            products.Show();
+        }
     }
 }

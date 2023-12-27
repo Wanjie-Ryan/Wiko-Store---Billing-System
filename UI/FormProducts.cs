@@ -41,5 +41,12 @@ namespace Wiko_Store.UI
         {
 
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            // code to hide this form when the x icon is clicked
+
+            this.Hide();
+        }
     }
 }
