@@ -192,5 +192,29 @@ namespace Wiko_Store.UI
                 MessageBox.Show("Failed to delete category");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            //get the keywords
+
+            string keywords = txtSearch.Text;
+
+            // filter the categories based on the keywords
+             
+            if(keywords != null)
+            {
+                // use search method to display the categories
+
+                DataTable dt = cdal.Search(keywords);
+                dgvCategories.DataSource = dt;
+            }
+            else
+            {
+                // use the select method to render the normal data
+
+                DataTable dt = cdal.Select();
+                dgvCategories.DataSource = dt;
+            }
+        }
     }
 }
