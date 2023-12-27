@@ -65,6 +65,12 @@
     <Compile Include="UI\FormCategories.Designer.cs">
       <DependentUpon>FormCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormProducts.Designer.cs">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormCategories.resx">
       <DependentUpon>FormCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormProducts.resx">
+      <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormUserDashboard.resx">
       <DependentUpon>FormUserDashboard.cs</DependentUpon>
