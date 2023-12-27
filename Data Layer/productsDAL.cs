@@ -82,7 +82,7 @@ namespace Wiko_Store.Data_Layer
             try
             {
 
-                string sql = "INSERT INTO tbl_categories (name, category, description, rate, quantity, added_date, added_by) VALUES (@name, @category, @description, @rate, @quantity, @added_date, @added_by)  ";
+                string sql = "INSERT INTO tbl_products (name, category, description, rate, quantity, added_date, added_by) VALUES (@name, @category, @description, @rate, @quantity, @added_date, @added_by)  ";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -98,6 +98,16 @@ namespace Wiko_Store.Data_Layer
 
                 int rows = cmd.ExecuteNonQuery();
 
+                if (rows > 0)
+                {
+                    isSuccess = true;
+
+                }
+                else
+                {
+                    isSuccess = false;
+                }  
+
             }
             catch(Exception ex)
             {
@@ -111,6 +121,38 @@ namespace Wiko_Store.Data_Layer
 
             return isSuccess;
 
+        }
+
+        public bool Update(ProductsLogic p)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+
+            try
+            {
+
+                string sql = "UPDATE tbl_products SET name = @name, category = @category, description = @description, rate = @rate, quantity = @quantity, added_date = @added_date, added_by = @added_by WHERE id = @id  ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@name", p.name);
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                
+            }
+
+
+
+            return isSuccess;
         }
 
     }
