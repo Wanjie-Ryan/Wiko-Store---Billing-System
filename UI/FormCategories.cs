@@ -148,5 +148,33 @@ namespace Wiko_Store.UI
 
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // getting the id of the category from which we want to delete
+
+            cl.id = int.Parse(txtCategoryID.Text);
+
+            // creating boolean variable to check if the category is deleted or not
+
+            bool isSuccess = cdal.Delete(cl);
+
+            if(isSuccess == true)
+            {
+                MessageBox.Show("Category was deleted successfully");
+                Clear();
+
+                // refreshing the datagrid view
+
+                DataTable dt = cdal.Select();
+
+                dgvCategories.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete category");
+            }
+        }
     }
 }
