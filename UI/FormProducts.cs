@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wiko_Store.Data_Layer;
+using Wiko_Store.Logics;
 
 namespace Wiko_Store.UI
 {
@@ -51,6 +52,8 @@ namespace Wiko_Store.UI
         }
 
         CategoriesDAL cdal =  new CategoriesDAL();
+        productsDAL prodal =  new productsDAL();
+        new ProductsLogic p =  new ProductsLogic();
 
         private void FormProducts_Load(object sender, EventArgs e)
         {
@@ -63,6 +66,21 @@ namespace Wiko_Store.UI
 
             cmbCategory.DisplayMember = "title";
             cmbCategory.ValueMember = "title";
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtName.Text = p.name;
+            cmbCategory.Text = p.category;
+            txtDesc.Text = p.description;
+            p.rate = decimal.Parse(txtRate.Text);
+            p.quantity = 0;
+            p.added_date = DateTime.Now;
+
+            // getting the username of logged in user
+
+            string loggeduser = frmLogin.loggedIn;
+
         }
     }
 }
