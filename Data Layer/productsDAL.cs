@@ -184,8 +184,25 @@ namespace Wiko_Store.Data_Layer
             SqlConnection conn = new SqlConnection(myconnstrng);
 
             try 
-            { 
+            {
+                string sql = "DELETE FROM tbl_products WHERE id = @id";
 
+                SqlCommand cmd = new SqlCommand(sql,conn);
+
+                cmd.Parameters.AddWithValue("@id", p.id);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
                 
 
             }

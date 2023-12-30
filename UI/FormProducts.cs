@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.Data_Layer;
 
 namespace Wiko_Store.UI
 {
@@ -47,6 +48,21 @@ namespace Wiko_Store.UI
             // code to hide this form when the x icon is clicked
 
             this.Hide();
+        }
+
+        CategoriesDAL cdal =  new CategoriesDAL();
+
+        private void FormProducts_Load(object sender, EventArgs e)
+        {
+            // creating dataTable to hold categories from DB
+
+            DataTable catDT = cdal.Select();
+            cmbCategory.DataSource = catDT;
+
+            // specify the display member and value member for combobox
+
+            cmbCategory.DisplayMember = "title";
+            cmbCategory.ValueMember = "title";
         }
     }
 }
