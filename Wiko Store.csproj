@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data Layer\CategoriesDAL.cs" />
+    <Compile Include="Data Layer\CustomerDAL.cs" />
     <Compile Include="Data Layer\LoginDAL.cs" />
     <Compile Include="Data Layer\productsDAL.cs" />
     <Compile Include="Data Layer\UserDAL.cs" />
