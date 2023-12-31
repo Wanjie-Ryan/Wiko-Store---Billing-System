@@ -232,6 +232,15 @@ namespace Wiko_Store.Data_Layer
             {
                 string sql = "SELECT * FROM tbl_products WHERE id LIKE '%" + keywords + "%' OR name LIKE '%" + keywords + "%' OR category LIKE '%" + keywords + "%'";
 
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);   
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
             }
             catch(Exception ex)
             {
