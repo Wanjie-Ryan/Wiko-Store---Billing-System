@@ -60,7 +60,34 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
-                string sql = "INSERT INTO tbl_dealer_customer (id, type, name) VALUES () ";
+                string sql = "INSERT INTO tbl_dealer_customer (type, name, email, contact, address, added_date, added_by ) VALUES (@type, @name, @email, @contact, @address, @added_date, @added_by ) ";
+
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@type", cl.type);
+                cmd.Parameters.AddWithValue("@name", cl.name);
+                cmd.Parameters.AddWithValue("@email", cl.email);
+                cmd.Parameters.AddWithValue("@contact", cl.contact);
+                cmd.Parameters.AddWithValue("@address", cl.address);
+                cmd.Parameters.AddWithValue("@added_date", cl.added_date);
+                cmd.Parameters.AddWithValue("@added_by", cl.added_by);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+
+                }
+
+
 
             }
             catch(Exception ex)
