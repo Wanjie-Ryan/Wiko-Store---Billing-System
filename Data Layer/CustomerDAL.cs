@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.Logics;
 
 namespace Wiko_Store.Data_Layer
 {
@@ -48,6 +49,34 @@ namespace Wiko_Store.Data_Layer
             }
 
             return dt;
+        }
+
+        public bool Insert(CustomerLogics cl)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+
+            try
+            {
+                string sql = "INSERT INTO tbl_dealer_customer (id, type, name) VALUES () ";
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
+            return isSuccess;
+
         }
     }
 }
