@@ -125,6 +125,7 @@ namespace Wiko_Store.Data_Layer
                 cmd.Parameters.AddWithValue("@address", cl.address);
                 cmd.Parameters.AddWithValue("@added_date", cl.added_date);
                 cmd.Parameters.AddWithValue("@added_by", cl.added_by);
+                cmd.Parameters.AddWithValue("@id", cl.id);
 
                 conn.Open();
 
