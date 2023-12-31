@@ -16,5 +16,10 @@ namespace Wiko_Store.UI
         {
             InitializeComponent();
         }
+
+        private void lblProductID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

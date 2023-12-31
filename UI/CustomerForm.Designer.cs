@@ -32,6 +32,7 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.lblTop = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
@@ -69,12 +70,24 @@
             this.lblTop.TabIndex = 1;
             this.lblTop.Text = "DEALER and CUSTOMER";
             // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(12, 84);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(40, 15);
+            this.lblType.TabIndex = 4;
+            this.lblType.Text = "Type";
+            this.lblType.Click += new System.EventHandler(this.lblProductID_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1159, 486);
+            this.Controls.Add(this.lblType);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerForm";
@@ -84,6 +97,7 @@
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +106,6 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.Label lblTop;
+        private System.Windows.Forms.Label lblType;
     }
 }
