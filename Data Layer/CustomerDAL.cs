@@ -155,5 +155,47 @@ namespace Wiko_Store.Data_Layer
 
             return isSuccess;
         }
+
+        public bool Delete(CustomerLogics cl)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                string sql = "DELETE FROM tbl_dealer_customer WHERE id =@id";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@id", cl.id);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+
+        }
+
+
     }
 }
