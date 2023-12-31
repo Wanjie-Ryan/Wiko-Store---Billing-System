@@ -138,7 +138,15 @@ namespace Wiko_Store.UI
             }
             // get the values from the UI
 
-            p.id = int.Parse(txtID.Text);
+            int tempId;
+
+            if (!int.TryParse(txtID.Text, out tempId))
+            {
+                MessageBox.Show("Invalid Product ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            p.id = tempId;
             p.name = txtName.Text;
             p.category = cmbCategory.Text;
             p.description = txtDesc.Text;
@@ -181,7 +189,18 @@ namespace Wiko_Store.UI
                 MessageBox.Show("Please select a Product from the list before attempting to delete.", "No Product was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            p.id = int.Parse(txtID.Text);
+            //p.id = int.Parse(txtID.Text);
+
+            int tempId;
+
+            if (!int.TryParse(txtID.Text, out tempId))
+            {
+                MessageBox.Show("Invalid Product ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            p.id = tempId;
+
 
             bool success = prodal.Delete(p);
 
