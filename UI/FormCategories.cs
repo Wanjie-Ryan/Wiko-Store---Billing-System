@@ -82,7 +82,7 @@ namespace Wiko_Store.UI
 
             if(dgvCategories.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a category from the list before attempting to delete.", "No category was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a category from the list before attempting to update", "No category was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             // getting the values from the textboxes

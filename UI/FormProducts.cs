@@ -134,7 +134,7 @@ namespace Wiko_Store.UI
 
             if (dgvProducts.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a category from the list before attempting to delete.", "No category was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a Product from the list before attempting to update.", "No Product was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             // get the values from the UI
 
@@ -172,6 +172,34 @@ namespace Wiko_Store.UI
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvProducts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a Product from the list before attempting to delete.", "No Product was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            p.id = int.Parse(txtID.Text);
+
+            bool success = prodal.Delete(p);
+
+            if(success == true)
+            {
+                MessageBox.Show("Product was Deleted Successfully", "Delete successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+
+                DataTable dt = prodal.Select();
+                dgvProducts.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("Product failed to Delete, try Again!", "Failure to Delete", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+
+
+            }
         }
     }
 }
