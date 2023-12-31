@@ -24,7 +24,17 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
+                string sql = "SELECT * FROM tbl_dealer_customer";
 
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+               
 
             }
             catch(Exception ex)
