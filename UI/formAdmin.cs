@@ -41,5 +41,17 @@ namespace Wiko_Store
             FormProducts products = new FormProducts();
             products.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerForm cust = new CustomerForm();
+
+            cust.Show();
+        }
     }
 }

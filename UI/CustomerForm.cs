@@ -29,7 +29,7 @@ namespace Wiko_Store.UI
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
