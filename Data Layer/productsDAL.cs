@@ -133,7 +133,7 @@ namespace Wiko_Store.Data_Layer
             try
             {
 
-                string sql = "UPDATE tbl_products SET name = @name, category = @category, description = @description, rate = @rate, quantity = @quantity, added_date = @added_date, added_by = @added_by WHERE id = @id  ";
+                string sql = "UPDATE tbl_products SET name = @name, category = @category, description = @description, rate = @rate, added_date = @added_date, added_by = @added_by WHERE id = @id  ";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -141,7 +141,7 @@ namespace Wiko_Store.Data_Layer
                 cmd.Parameters.AddWithValue("@category", p.category);
                 cmd.Parameters.AddWithValue("@description", p.description);
                 cmd.Parameters.AddWithValue("@rate", p.rate);
-                cmd.Parameters.AddWithValue("@quantity", p.quantity);
+                //cmd.Parameters.AddWithValue("@quantity", p.quantity);
                 cmd.Parameters.AddWithValue("@added_date", p.added_date);
                 cmd.Parameters.AddWithValue("@added_by", p.added_by);
                 cmd.Parameters.AddWithValue("@id", p.id);

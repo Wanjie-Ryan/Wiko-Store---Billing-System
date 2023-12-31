@@ -128,5 +128,29 @@ namespace Wiko_Store.UI
             txtRate.Text = dgvProducts.Rows[RowIndex].Cells[4].Value.ToString();
 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // get the values from the UI
+
+            p.id = int.Parse(txtID.Text);
+            p.name = txtName.Text;
+            p.category = cmbCategory.Text;
+            p.description = txtDesc.Text;
+            p.rate = decimal.Parse(txtRate.Text);
+            p.added_date = DateTime.Now;
+
+            // getting the username of logged in user
+
+            string loggeduser = LoginForm.loggedIn;
+            UserLogics usr = userdal.GetIDFromUsername(loggeduser);
+
+            p.added_by = usr.id;
+        }
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
