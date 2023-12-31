@@ -22,5 +22,11 @@ namespace Wiko_Store
         {
             lblLoggedInUser.Text = LoginForm.loggedIn;
         }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerForm cust = new CustomerForm();
+            cust.Show();
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.lblAppFname = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
+            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripTop.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,8 @@
             this.menuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.purchaseToolStripMenuItem,
             this.salesFormsToolStripMenuItem,
-            this.inventoryToolStripMenuItem});
+            this.inventoryToolStripMenuItem,
+            this.dealerAndCustomerToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(1141, 24);
@@ -133,6 +135,13 @@
             this.lblFooter.TabIndex = 0;
             this.lblFooter.Text = "Developed By: Wanjie Ryan";
             // 
+            // dealerAndCustomerToolStripMenuItem
+            // 
+            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
+            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
+            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
+            // 
             // FormUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,5 +180,6 @@
         private System.Windows.Forms.Label lblAppFname;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
     }
 }
