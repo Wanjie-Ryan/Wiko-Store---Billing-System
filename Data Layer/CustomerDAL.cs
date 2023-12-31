@@ -105,5 +105,54 @@ namespace Wiko_Store.Data_Layer
             return isSuccess;
 
         }
+
+        public bool Update(CustomerLogics cl)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                string sql = "UPDATE tbl_dealer_customer SET type = @type, name=@name, email=@email, contact=@contact, address= @address, added_date = @added_date, added_by = @added_by WHERE id =@id ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@type", cl.type);
+                cmd.Parameters.AddWithValue("@name", cl.name);
+                cmd.Parameters.AddWithValue("@email", cl.email);
+                cmd.Parameters.AddWithValue("@contact", cl.contact);
+                cmd.Parameters.AddWithValue("@address", cl.address);
+                cmd.Parameters.AddWithValue("@added_date", cl.added_date);
+                cmd.Parameters.AddWithValue("@added_by", cl.added_by);
+
+                conn.Open();
+
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
+            return isSuccess;
+        }
     }
 }
