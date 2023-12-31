@@ -225,5 +225,22 @@ namespace Wiko_Store.UI
         {
             Clear();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keywords = txtSearch.Text;
+
+            if(keywords != null)
+            {
+                DataTable dt = prodal.Search(keywords);
+                dgvProducts.DataSource = dt;
+
+            }
+            else
+            {
+                DataTable dt = prodal.Select();
+                dgvProducts.DataSource = dt;
+            }
+        }
     }
 }
