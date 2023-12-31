@@ -131,6 +131,11 @@ namespace Wiko_Store.UI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+            if (dgvProducts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a category from the list before attempting to delete.", "No category was selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             // get the values from the UI
 
             p.id = int.Parse(txtID.Text);
@@ -146,6 +151,22 @@ namespace Wiko_Store.UI
             UserLogics usr = userdal.GetIDFromUsername(loggeduser);
 
             p.added_by = usr.id;
+
+            bool success = prodal.Update(p);
+
+            if(success == true)
+            {
+                MessageBox.Show("Product Updated Successfully", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+
+                DataTable dt = prodal.Select();
+                dgvProducts.DataSource = dt;
+
+            }
+            else
+            {
+                MessageBox.Show("Product failed to update, try Again!", "Failure to update", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
