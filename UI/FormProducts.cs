@@ -53,7 +53,8 @@ namespace Wiko_Store.UI
 
         CategoriesDAL cdal =  new CategoriesDAL();
         productsDAL prodal =  new productsDAL();
-        new ProductsLogic p =  new ProductsLogic();
+        ProductsLogic p =  new ProductsLogic();
+        UserDAL userdal = new UserDAL();
 
         private void FormProducts_Load(object sender, EventArgs e)
         {
@@ -70,17 +71,48 @@ namespace Wiko_Store.UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtName.Text = p.name;
-            cmbCategory.Text = p.category;
-            txtDesc.Text = p.description;
+            p.name = txtName.Text;
+            p.category = cmbCategory.Text;
+            p.description = txtDesc.Text;
             p.rate = decimal.Parse(txtRate.Text);
             p.quantity = 0;
             p.added_date = DateTime.Now;
 
             // getting the username of logged in user
 
-            string loggeduser = frmLogin.loggedIn;
+            string loggeduser = LoginForm.loggedIn;
+            UserLogics usr = userdal.GetIDFromUsername(loggeduser);
 
+            p.added_by = usr.id;
+
+            //create boolean variable to check if the product is added successfully or not
+
+            bool success = prodal.Insert(p);
+
+            if(success == true)
+            {
+                MessageBox.Show("Products Inserted Successfully");
+                Clear();
+
+                DataTable dt = new DataTable();
+                dgvProducts.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to add new Product");
+            }
+
+
+        }
+
+        public void Clear()
+        {
+            txtID.Text = "";
+            txtDesc.Text = "";
+            txtRate.Text = "";
+            txtName.Text = "";
+            txtSearch.Text = "";
+            cmbCategory.Text = "";
         }
     }
 }

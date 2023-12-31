@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPwd = new System.Windows.Forms.Label();
-            this.lblUserType = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPwd = new System.Windows.Forms.TextBox();
-            this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblPwd = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.PicBoxClose = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxClose)).BeginInit();
@@ -58,77 +58,7 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(364, 365);
             this.panelLogin.TabIndex = 0;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Orbitron", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.Gold;
-            this.lblHeader.Location = new System.Drawing.Point(19, 13);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(317, 32);
-            this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "Salam Stores-Login";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Black Ops One", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(12, 102);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(94, 19);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Username";
-            // 
-            // lblPwd
-            // 
-            this.lblPwd.AutoSize = true;
-            this.lblPwd.Font = new System.Drawing.Font("Black Ops One", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPwd.Location = new System.Drawing.Point(12, 170);
-            this.lblPwd.Name = "lblPwd";
-            this.lblPwd.Size = new System.Drawing.Size(93, 19);
-            this.lblPwd.TabIndex = 2;
-            this.lblPwd.Text = "Password";
-            this.lblPwd.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lblUserType
-            // 
-            this.lblUserType.AutoSize = true;
-            this.lblUserType.Font = new System.Drawing.Font("Black Ops One", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserType.Location = new System.Drawing.Point(12, 234);
-            this.lblUserType.Name = "lblUserType";
-            this.lblUserType.Size = new System.Drawing.Size(91, 19);
-            this.lblUserType.TabIndex = 3;
-            this.lblUserType.Text = "User Type";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(141, 102);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(126, 23);
-            this.txtUsername.TabIndex = 4;
-            // 
-            // txtPwd
-            // 
-            this.txtPwd.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPwd.Location = new System.Drawing.Point(141, 170);
-            this.txtPwd.Name = "txtPwd";
-            this.txtPwd.PasswordChar = '*';
-            this.txtPwd.Size = new System.Drawing.Size(126, 23);
-            this.txtPwd.TabIndex = 5;
-            // 
-            // cmbUserType
-            // 
-            this.cmbUserType.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUserType.FormattingEnabled = true;
-            this.cmbUserType.Items.AddRange(new object[] {
-            "User",
-            "Admin"});
-            this.cmbUserType.Location = new System.Drawing.Point(141, 234);
-            this.cmbUserType.Name = "cmbUserType";
-            this.cmbUserType.Size = new System.Drawing.Size(126, 24);
-            this.cmbUserType.TabIndex = 6;
+            this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogin_Paint);
             // 
             // btnLogin
             // 
@@ -142,6 +72,77 @@
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // cmbUserType
+            // 
+            this.cmbUserType.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Items.AddRange(new object[] {
+            "User",
+            "Admin"});
+            this.cmbUserType.Location = new System.Drawing.Point(141, 234);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(126, 24);
+            this.cmbUserType.TabIndex = 6;
+            // 
+            // txtPwd
+            // 
+            this.txtPwd.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPwd.Location = new System.Drawing.Point(141, 170);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
+            this.txtPwd.Size = new System.Drawing.Size(126, 23);
+            this.txtPwd.TabIndex = 5;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(141, 102);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(126, 23);
+            this.txtUsername.TabIndex = 4;
+            // 
+            // lblUserType
+            // 
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Black Ops One", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.Location = new System.Drawing.Point(12, 234);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(91, 19);
+            this.lblUserType.TabIndex = 3;
+            this.lblUserType.Text = "User Type";
+            // 
+            // lblPwd
+            // 
+            this.lblPwd.AutoSize = true;
+            this.lblPwd.Font = new System.Drawing.Font("Black Ops One", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPwd.Location = new System.Drawing.Point(12, 170);
+            this.lblPwd.Name = "lblPwd";
+            this.lblPwd.Size = new System.Drawing.Size(93, 19);
+            this.lblPwd.TabIndex = 2;
+            this.lblPwd.Text = "Password";
+            this.lblPwd.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Black Ops One", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(12, 102);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(94, 19);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Username";
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Orbitron", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.Gold;
+            this.lblHeader.Location = new System.Drawing.Point(19, 13);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(317, 32);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "Salam Stores-Login";
             // 
             // PicBoxClose
             // 
