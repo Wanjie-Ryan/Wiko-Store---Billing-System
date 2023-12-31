@@ -213,6 +213,7 @@
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.Size = new System.Drawing.Size(441, 185);
             this.dgvProducts.TabIndex = 17;
+            this.dgvProducts.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducts_RowHeaderMouseClick);
             // 
             // btnClear
             // 

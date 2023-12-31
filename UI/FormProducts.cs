@@ -67,6 +67,9 @@ namespace Wiko_Store.UI
 
             cmbCategory.DisplayMember = "title";
             cmbCategory.ValueMember = "title";
+
+            DataTable pdat =  prodal.Select();
+            dgvProducts.DataSource = pdat;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -113,6 +116,17 @@ namespace Wiko_Store.UI
             txtName.Text = "";
             txtSearch.Text = "";
             cmbCategory.Text = "";
+        }
+
+        private void dgvProducts_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int RowIndex = e.RowIndex;
+            txtID.Text = dgvProducts.Rows[RowIndex].Cells[0].Value.ToString();
+            txtName.Text = dgvProducts.Rows[RowIndex].Cells[1].Value.ToString();
+            cmbCategory.Text = dgvProducts.Rows[RowIndex].Cells[2].Value.ToString();
+            txtDesc.Text = dgvProducts.Rows[RowIndex].Cells[3].Value.ToString();
+            txtRate.Text = dgvProducts.Rows[RowIndex].Cells[4].Value.ToString();
+
         }
     }
 }
