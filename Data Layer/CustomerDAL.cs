@@ -197,7 +197,7 @@ namespace Wiko_Store.Data_Layer
         }
 
 
-        public DataTable Search()
+        public DataTable Search(string keywords)
         {
             DataTable dt = new DataTable();
 
@@ -205,8 +205,15 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
+                string sql = "SELECT * FROM tbl_dealer_customer WHERE id LIKE '%" +keywords+ "%' OR type LIKE '%" +keywords+ "%' OR name LIKE '%" +keywords+ "%' OR email LIKE '%" +keywords+ "%'";
 
+                SqlCommand cmd = new SqlCommand(sql, conn);
 
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
             }
             catch(Exception ex)
             {
