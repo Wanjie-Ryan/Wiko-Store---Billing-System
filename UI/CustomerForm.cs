@@ -118,5 +118,55 @@ namespace Wiko_Store.UI
             txtContact.Text = dgvDealCust.Rows[rows].Cells[4].Value.ToString();
             txtAddress.Text = dgvDealCust.Rows[rows].Cells[5].Value.ToString();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            if (dgvDealCust.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer or dealer from the list before attempting to update.", "No customer or dealer was selected", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+            }
+            // get the values from the UI
+
+            int tempId;
+
+            if (!int.TryParse(txtID.Text, out tempId))
+            {
+                MessageBox.Show("Invalid Customer or Dealer ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                return;
+            }
+            // convert the string id to integer using the int.parse
+
+            cl.id = tempId;
+            cl.type = cmbType.Text;
+            cl.name = txtName.Text;
+            cl.email = txtEmail.Text;
+            cl.contact = txtContact.Text;
+            cl.address = txtAddress.Text;
+
+            string loggeduser = LoginForm.loggedIn;
+            UserLogics usr = uDal.GetIDFromUsername(loggeduser);
+
+            cl.added_by = usr.id;
+
+            bool success = cdal.Update(cl);
+
+            if(success == true)
+            {
+                string usertype = cl.type.ToString();
+
+                MessageBox.Show($"{usertype} was updated successfully", "Successful Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+                DataTable dt = cdal.Select();
+                dgvDealCust.DataSource = dt;
+
+            }
+            else
+            {
+                String usertype = cl.type.ToLower();
+
+                MessageBox.Show($"Failed to add {usertype}", "Insertion failure", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+        }
     }
 }
