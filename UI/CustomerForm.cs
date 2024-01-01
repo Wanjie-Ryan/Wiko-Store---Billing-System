@@ -70,6 +70,22 @@ namespace Wiko_Store.UI
 
             bool Success = cdal.Insert(cl);
 
+            if(Success == true)
+            {
+
+                // to render the usertype dynamically in the messagebox
+                string usertype = cl.type.ToLower();
+                MessageBox.Show("");
+                Clear();
+
+                DataTable dt = cdal.Select();
+                dgvDealCust.DataSource = dt;
+            }
+            else
+            {
+
+            }
+
 
 
 
