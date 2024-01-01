@@ -41,6 +41,7 @@ namespace Wiko_Store.UI
 
         CustomerLogics cl = new CustomerLogics();
         CustomerDAL cdal = new CustomerDAL();
+        UserDAL uDal = new UserDAL();
 
         public void Clear()
         {
@@ -60,6 +61,15 @@ namespace Wiko_Store.UI
             cl.email = txtEmail.Text;
             cl.contact = txtContact.Text;
             cl.address = txtAddress.Text;
+            cl.added_date = DateTime.Now;
+
+            string loggedUser = LoginForm.loggedIn;
+            UserLogics usr = uDal.GetIDFromUsername(loggedUser);
+
+            cl.added_by = usr.id;
+
+            bool Success = cdal.Insert(cl);
+
 
 
 
