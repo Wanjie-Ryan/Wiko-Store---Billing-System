@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.Data_Layer;
+using Wiko_Store.Logics;
 
 namespace Wiko_Store.UI
 {
@@ -35,6 +37,39 @@ namespace Wiko_Store.UI
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        CustomerLogics cl = new CustomerLogics();
+        CustomerDAL cdal = new CustomerDAL();
+
+        public void Clear()
+        {
+            txtID.Text = "";
+            cmbType.Text = "";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtContact.Text = "";
+            txtAddress.Text = "";
+
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            cl.type = cmbType.Text;
+            cl.name = txtName.Text;
+            cl.email = txtEmail.Text;
+            cl.contact = txtContact.Text;
+            cl.address = txtAddress.Text;
+
+
+
+
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
