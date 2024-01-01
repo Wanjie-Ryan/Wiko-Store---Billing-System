@@ -187,12 +187,13 @@ namespace Wiko_Store.UI
             }
 
             cl.id = tempId;
+            cl.type = cmbType.Text;
 
             bool success = cdal.Delete(cl);
 
             if(success == true)
             {
-                string usertype = cl.type.ToString();
+                string usertype = cl.type.ToLower();
 
                 MessageBox.Show($"{usertype} was deleted successfully", "Deletion successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -210,6 +211,23 @@ namespace Wiko_Store.UI
 
 
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keywords = txtSearch.Text;
+
+            if(keywords != null)
+            {
+                DataTable dt = cdal.Search(keywords);
+                dgvDealCust.DataSource = dt;
+
+            }
+            else
+            {
+                DataTable dt = cdal.Select();
+                dgvDealCust.DataSource = dt;
+            }
         }
     }
 }
