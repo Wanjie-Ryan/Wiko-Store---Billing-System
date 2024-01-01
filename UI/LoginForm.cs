@@ -47,7 +47,7 @@ namespace Wiko_Store.UI
             if(isSuccess == true)
             {
 
-                MessageBox.Show("Login Successful");
+                MessageBox.Show("Login Successful", "Login Success",  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loggedIn = l.username;
                 //opening forms based on user types
                 switch (l.userType)
@@ -84,7 +84,7 @@ namespace Wiko_Store.UI
             }
             else
             {
-                MessageBox.Show("Inavlid Credentials");
+                MessageBox.Show("Inavlid Credentials" ,"Login Fail", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
             }
 
 
