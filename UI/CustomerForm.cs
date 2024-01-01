@@ -124,7 +124,7 @@ namespace Wiko_Store.UI
 
             if (dgvDealCust.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a customer or dealer from the list before attempting to update.", "No customer or dealer was selected", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a customer or dealer from the list before attempting to update.", "No customer or dealer was selected", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             // get the values from the UI
 
@@ -132,7 +132,7 @@ namespace Wiko_Store.UI
 
             if (!int.TryParse(txtID.Text, out tempId))
             {
-                MessageBox.Show("Invalid Customer or Dealer ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid Customer or Dealer ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
             // convert the string id to integer using the int.parse
