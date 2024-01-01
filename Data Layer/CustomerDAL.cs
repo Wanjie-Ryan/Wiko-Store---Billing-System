@@ -197,5 +197,30 @@ namespace Wiko_Store.Data_Layer
         }
 
 
+        public DataTable Search()
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+
+        }
+
+
     }
 }
