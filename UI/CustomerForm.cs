@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -167,6 +168,48 @@ namespace Wiko_Store.UI
 
                 MessageBox.Show($"Failed to add {usertype}", "Insertion failure", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvDealCust.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer or dealer from the list before attempting to delete.", "No customer or dealer was selected", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            // get the values from the UI
+
+            int tempId;
+
+            if (!int.TryParse(txtID.Text, out tempId))
+            {
+                MessageBox.Show("Invalid Customer or Dealer ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+
+            cl.id = tempId;
+
+            bool success = cdal.Delete(cl);
+
+            if(success == true)
+            {
+                string usertype = cl.type.ToString();
+
+                MessageBox.Show($"{usertype} was deleted successfully", "Deletion successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Clear();
+
+                DataTable dt = cdal.Select();
+                dgvDealCust.DataSource = dt;    
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete customer or dealer", "Deletion failure", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+
+
+
+
+
         }
     }
 }
