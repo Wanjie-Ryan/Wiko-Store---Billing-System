@@ -320,6 +320,7 @@
             this.Name = "CustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerForm";
+            this.Load += new System.EventHandler(this.CustomerForm_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();

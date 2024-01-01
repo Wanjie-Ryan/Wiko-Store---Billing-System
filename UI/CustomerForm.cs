@@ -74,8 +74,10 @@ namespace Wiko_Store.UI
             {
 
                 // to render the usertype dynamically in the messagebox
+
                 string usertype = cl.type.ToLower();
-                MessageBox.Show("");
+
+                MessageBox.Show($"{usertype} was added successfully", "Successful Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Clear();
 
                 DataTable dt = cdal.Select();
@@ -83,7 +85,9 @@ namespace Wiko_Store.UI
             }
             else
             {
+                String usertype = cl.type.ToLower();
 
+                MessageBox.Show($"Failed to add {usertype}", "Insertion failure", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
 
 
@@ -96,6 +100,12 @@ namespace Wiko_Store.UI
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+            DataTable dt = cdal.Select();
+            dgvDealCust.DataSource = dt;
         }
     }
 }
