@@ -107,5 +107,16 @@ namespace Wiko_Store.UI
             DataTable dt = cdal.Select();
             dgvDealCust.DataSource = dt;
         }
+
+        private void dgvDealCust_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rows = e.RowIndex;
+            txtID.Text = dgvDealCust.Rows[rows].Cells[0].Value.ToString();
+            cmbType.Text = dgvDealCust.Rows[rows].Cells[1].Value.ToString();
+            txtName.Text = dgvDealCust.Rows[rows].Cells[2].Value.ToString();
+            txtEmail.Text = dgvDealCust.Rows[rows].Cells[3].Value.ToString();
+            txtContact.Text = dgvDealCust.Rows[rows].Cells[4].Value.ToString();
+            txtAddress.Text = dgvDealCust.Rows[rows].Cells[5].Value.ToString();
+        }
     }
 }

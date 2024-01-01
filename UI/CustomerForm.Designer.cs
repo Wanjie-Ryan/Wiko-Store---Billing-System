@@ -270,6 +270,7 @@
             this.dgvDealCust.Name = "dgvDealCust";
             this.dgvDealCust.Size = new System.Drawing.Size(441, 185);
             this.dgvDealCust.TabIndex = 42;
+            this.dgvDealCust.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDealCust_RowHeaderMouseClick);
             // 
             // txtSearch
             // 
