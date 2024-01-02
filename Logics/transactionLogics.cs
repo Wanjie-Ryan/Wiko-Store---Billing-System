@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Wiko_Store.Logics
 {
-    internal class transactionDetails
+    internal class transactionLogics
     {
         public int id { get; set; }
-        public int product_id { get; set; }
-        public decimal rate { get; set; }
-        public decimal quantity { get; set; }
-        public decimal total { get; set; }
+        public string type { get; set; }
         public int dea_cust_id { get; set; }
-        public DateTime added_date { get; set; }
+        public decimal total { get; set; }
+        public DateTime transaction_date { get; set; }
+        public decimal tax { get; set; }
+        public decimal discount { get; set; }
         public int added_by { get; set; }
-
+       
     }
 }
