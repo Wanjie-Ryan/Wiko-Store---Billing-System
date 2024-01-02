@@ -129,9 +129,9 @@ namespace Wiko_Store.UI
             }
             // get the values from the UI
 
-            int tempId;
+            //int tempId;
 
-            if (!int.TryParse(txtID.Text, out tempId))
+            if (!int.TryParse(txtID.Text,  out int tempId))
             {
                 MessageBox.Show("Invalid Customer or Dealer ID. Please select a valid ID.", "Invalid ID", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
