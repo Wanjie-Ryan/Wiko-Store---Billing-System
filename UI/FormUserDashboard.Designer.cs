@@ -32,13 +32,13 @@
             this.purchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblSubheading = new System.Windows.Forms.Label();
             this.lblAppFname = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripTop.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.SuspendLayout();
@@ -61,18 +61,27 @@
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
             this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.purchaseToolStripMenuItem.Text = "Purchase";
+            this.purchaseToolStripMenuItem.Click += new System.EventHandler(this.purchaseToolStripMenuItem_Click);
             // 
             // salesFormsToolStripMenuItem
             // 
             this.salesFormsToolStripMenuItem.Name = "salesFormsToolStripMenuItem";
             this.salesFormsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.salesFormsToolStripMenuItem.Text = "Sales ";
+            this.salesFormsToolStripMenuItem.Click += new System.EventHandler(this.salesFormsToolStripMenuItem_Click);
             // 
             // inventoryToolStripMenuItem
             // 
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.inventoryToolStripMenuItem.Text = "Inventory";
+            // 
+            // dealerAndCustomerToolStripMenuItem
+            // 
+            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
+            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
+            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
             // 
             // lblLoggedInUser
             // 
@@ -134,13 +143,6 @@
             this.lblFooter.Size = new System.Drawing.Size(238, 20);
             this.lblFooter.TabIndex = 0;
             this.lblFooter.Text = "Developed By: Wanjie Ryan";
-            // 
-            // dealerAndCustomerToolStripMenuItem
-            // 
-            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
-            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
-            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
-            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
             // 
             // FormUserDashboard
             // 

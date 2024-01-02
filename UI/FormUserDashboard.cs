@@ -28,5 +28,17 @@ namespace Wiko_Store
             CustomerForm cust = new CustomerForm();
             cust.Show();
         }
+
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesForm sf = new SalesForm();
+            sf.Show();
+        }
+
+        private void salesFormsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesForm sf = new SalesForm();
+            sf.Show();
+        }
     }
 }
