@@ -46,9 +46,12 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
+            this.pnlProductDetails = new System.Windows.Forms.Panel();
+            this.lblProductDetails = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.pnlDeaCust.SuspendLayout();
+            this.pnlProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -226,12 +229,32 @@
             this.dtpBillDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBillDate.TabIndex = 14;
             // 
+            // pnlProductDetails
+            // 
+            this.pnlProductDetails.Controls.Add(this.lblProductDetails);
+            this.pnlProductDetails.Location = new System.Drawing.Point(12, 183);
+            this.pnlProductDetails.Name = "pnlProductDetails";
+            this.pnlProductDetails.Size = new System.Drawing.Size(1124, 111);
+            this.pnlProductDetails.TabIndex = 6;
+            // 
+            // lblProductDetails
+            // 
+            this.lblProductDetails.AutoSize = true;
+            this.lblProductDetails.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDetails.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblProductDetails.Location = new System.Drawing.Point(13, 10);
+            this.lblProductDetails.Name = "lblProductDetails";
+            this.lblProductDetails.Size = new System.Drawing.Size(138, 18);
+            this.lblProductDetails.TabIndex = 1;
+            this.lblProductDetails.Text = "Product Details";
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1148, 493);
+            this.Controls.Add(this.pnlProductDetails);
             this.Controls.Add(this.pnlDeaCust);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -243,6 +266,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.pnlDeaCust.ResumeLayout(false);
             this.pnlDeaCust.PerformLayout();
+            this.pnlProductDetails.ResumeLayout(false);
+            this.pnlProductDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -266,5 +291,7 @@
         private System.Windows.Forms.Label lblBillDate;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.DateTimePicker dtpBillDate;
+        private System.Windows.Forms.Panel pnlProductDetails;
+        private System.Windows.Forms.Label lblProductDetails;
     }
 }
