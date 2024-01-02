@@ -16,5 +16,10 @@ namespace Wiko_Store.UI
         {
             InitializeComponent();
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
