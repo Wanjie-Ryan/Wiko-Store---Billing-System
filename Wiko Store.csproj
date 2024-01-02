@@ -57,6 +57,7 @@
     <Compile Include="Logics\LoginLogics1.cs" />
     <Compile Include="Logics\ProductsLogic.cs" />
     <Compile Include="Logics\SalesLogic.cs" />
+    <Compile Include="Logics\transactionDetails.cs" />
     <Compile Include="Logics\UserLogics.cs" />
     <Compile Include="UI\CustomerForm.cs">
       <SubType>Form</SubType>
