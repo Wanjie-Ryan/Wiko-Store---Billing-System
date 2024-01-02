@@ -58,10 +58,32 @@
             this.lblRate = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.pnlDGV = new System.Windows.Forms.Panel();
+            this.lblDGVTitle = new System.Windows.Forms.Label();
+            this.dgvAddedProducts = new System.Windows.Forms.DataGridView();
+            this.pnlCalculation = new System.Windows.Forms.Panel();
+            this.lblCalc = new System.Windows.Forms.Label();
+            this.lblVat = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblGT = new System.Windows.Forms.Label();
+            this.lblPaidAmount = new System.Windows.Forms.Label();
+            this.lblReturnAmount = new System.Windows.Forms.Label();
+            this.txtVAT = new System.Windows.Forms.TextBox();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.txtGT = new System.Windows.Forms.TextBox();
+            this.txtPaidAmount = new System.Windows.Forms.TextBox();
+            this.txtReturnAmount = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.pnlDeaCust.SuspendLayout();
             this.pnlProductDetails.SuspendLayout();
+            this.pnlDGV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddedProducts)).BeginInit();
+            this.pnlCalculation.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -241,6 +263,7 @@
             // 
             // pnlProductDetails
             // 
+            this.pnlProductDetails.Controls.Add(this.btnAdd);
             this.pnlProductDetails.Controls.Add(this.txtQuantity);
             this.pnlProductDetails.Controls.Add(this.lblQuantity);
             this.pnlProductDetails.Controls.Add(this.txtRate);
@@ -358,12 +381,215 @@
             this.lblQuantity.TabIndex = 18;
             this.lblQuantity.Text = "Quantity";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(678, 85);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(102, 28);
+            this.btnAdd.TabIndex = 20;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // pnlDGV
+            // 
+            this.pnlDGV.Controls.Add(this.dgvAddedProducts);
+            this.pnlDGV.Controls.Add(this.lblDGVTitle);
+            this.pnlDGV.Location = new System.Drawing.Point(12, 307);
+            this.pnlDGV.Name = "pnlDGV";
+            this.pnlDGV.Size = new System.Drawing.Size(549, 234);
+            this.pnlDGV.TabIndex = 7;
+            // 
+            // lblDGVTitle
+            // 
+            this.lblDGVTitle.AutoSize = true;
+            this.lblDGVTitle.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDGVTitle.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblDGVTitle.Location = new System.Drawing.Point(13, 14);
+            this.lblDGVTitle.Name = "lblDGVTitle";
+            this.lblDGVTitle.Size = new System.Drawing.Size(143, 18);
+            this.lblDGVTitle.TabIndex = 1;
+            this.lblDGVTitle.Text = "Added Products";
+            // 
+            // dgvAddedProducts
+            // 
+            this.dgvAddedProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddedProducts.Location = new System.Drawing.Point(16, 49);
+            this.dgvAddedProducts.Name = "dgvAddedProducts";
+            this.dgvAddedProducts.Size = new System.Drawing.Size(507, 182);
+            this.dgvAddedProducts.TabIndex = 2;
+            // 
+            // pnlCalculation
+            // 
+            this.pnlCalculation.Controls.Add(this.btnSave);
+            this.pnlCalculation.Controls.Add(this.txtSubTotal);
+            this.pnlCalculation.Controls.Add(this.txtReturnAmount);
+            this.pnlCalculation.Controls.Add(this.txtPaidAmount);
+            this.pnlCalculation.Controls.Add(this.txtGT);
+            this.pnlCalculation.Controls.Add(this.txtDiscount);
+            this.pnlCalculation.Controls.Add(this.txtVAT);
+            this.pnlCalculation.Controls.Add(this.lblReturnAmount);
+            this.pnlCalculation.Controls.Add(this.lblPaidAmount);
+            this.pnlCalculation.Controls.Add(this.lblGT);
+            this.pnlCalculation.Controls.Add(this.lblTotal);
+            this.pnlCalculation.Controls.Add(this.lblDiscount);
+            this.pnlCalculation.Controls.Add(this.lblVat);
+            this.pnlCalculation.Controls.Add(this.lblCalc);
+            this.pnlCalculation.Location = new System.Drawing.Point(576, 307);
+            this.pnlCalculation.Name = "pnlCalculation";
+            this.pnlCalculation.Size = new System.Drawing.Size(560, 234);
+            this.pnlCalculation.TabIndex = 8;
+            // 
+            // lblCalc
+            // 
+            this.lblCalc.AutoSize = true;
+            this.lblCalc.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalc.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblCalc.Location = new System.Drawing.Point(13, 14);
+            this.lblCalc.Name = "lblCalc";
+            this.lblCalc.Size = new System.Drawing.Size(163, 18);
+            this.lblCalc.TabIndex = 1;
+            this.lblCalc.Text = "Calculation Details";
+            // 
+            // lblVat
+            // 
+            this.lblVat.AutoSize = true;
+            this.lblVat.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVat.Location = new System.Drawing.Point(13, 110);
+            this.lblVat.Name = "lblVat";
+            this.lblVat.Size = new System.Drawing.Size(66, 16);
+            this.lblVat.TabIndex = 6;
+            this.lblVat.Text = "VAT (%)";
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.Location = new System.Drawing.Point(13, 79);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(97, 16);
+            this.lblDiscount.TabIndex = 7;
+            this.lblDiscount.Text = "Discount (%)";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(13, 49);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(77, 16);
+            this.lblTotal.TabIndex = 8;
+            this.lblTotal.Text = "Sub Total";
+            // 
+            // lblGT
+            // 
+            this.lblGT.AutoSize = true;
+            this.lblGT.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGT.Location = new System.Drawing.Point(13, 140);
+            this.lblGT.Name = "lblGT";
+            this.lblGT.Size = new System.Drawing.Size(93, 16);
+            this.lblGT.TabIndex = 9;
+            this.lblGT.Text = "Grand Total";
+            // 
+            // lblPaidAmount
+            // 
+            this.lblPaidAmount.AutoSize = true;
+            this.lblPaidAmount.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaidAmount.Location = new System.Drawing.Point(13, 175);
+            this.lblPaidAmount.Name = "lblPaidAmount";
+            this.lblPaidAmount.Size = new System.Drawing.Size(99, 16);
+            this.lblPaidAmount.TabIndex = 10;
+            this.lblPaidAmount.Text = "Paid Amount";
+            // 
+            // lblReturnAmount
+            // 
+            this.lblReturnAmount.AutoSize = true;
+            this.lblReturnAmount.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReturnAmount.Location = new System.Drawing.Point(13, 204);
+            this.lblReturnAmount.Name = "lblReturnAmount";
+            this.lblReturnAmount.Size = new System.Drawing.Size(119, 16);
+            this.lblReturnAmount.TabIndex = 11;
+            this.lblReturnAmount.Text = "Return Amount";
+            // 
+            // txtVAT
+            // 
+            this.txtVAT.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVAT.Location = new System.Drawing.Point(149, 107);
+            this.txtVAT.Name = "txtVAT";
+            this.txtVAT.Size = new System.Drawing.Size(164, 22);
+            this.txtVAT.TabIndex = 12;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.Location = new System.Drawing.Point(149, 79);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(164, 22);
+            this.txtDiscount.TabIndex = 13;
+            // 
+            // txtGT
+            // 
+            this.txtGT.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtGT.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGT.Location = new System.Drawing.Point(149, 138);
+            this.txtGT.Name = "txtGT";
+            this.txtGT.ReadOnly = true;
+            this.txtGT.Size = new System.Drawing.Size(164, 22);
+            this.txtGT.TabIndex = 14;
+            // 
+            // txtPaidAmount
+            // 
+            this.txtPaidAmount.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaidAmount.Location = new System.Drawing.Point(149, 169);
+            this.txtPaidAmount.Name = "txtPaidAmount";
+            this.txtPaidAmount.Size = new System.Drawing.Size(164, 22);
+            this.txtPaidAmount.TabIndex = 15;
+            // 
+            // txtReturnAmount
+            // 
+            this.txtReturnAmount.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtReturnAmount.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnAmount.ForeColor = System.Drawing.Color.Red;
+            this.txtReturnAmount.Location = new System.Drawing.Point(149, 202);
+            this.txtReturnAmount.Name = "txtReturnAmount";
+            this.txtReturnAmount.ReadOnly = true;
+            this.txtReturnAmount.Size = new System.Drawing.Size(164, 22);
+            this.txtReturnAmount.TabIndex = 16;
+            // 
+            // txtSubTotal
+            // 
+            this.txtSubTotal.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtSubTotal.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubTotal.Location = new System.Drawing.Point(149, 47);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
+            this.txtSubTotal.Size = new System.Drawing.Size(164, 22);
+            this.txtSubTotal.TabIndex = 17;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(367, 99);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(139, 39);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1148, 493);
+            this.ClientSize = new System.Drawing.Size(1148, 553);
+            this.Controls.Add(this.pnlCalculation);
+            this.Controls.Add(this.pnlDGV);
             this.Controls.Add(this.pnlProductDetails);
             this.Controls.Add(this.pnlDeaCust);
             this.Controls.Add(this.panelTop);
@@ -378,6 +604,11 @@
             this.pnlDeaCust.PerformLayout();
             this.pnlProductDetails.ResumeLayout(false);
             this.pnlProductDetails.PerformLayout();
+            this.pnlDGV.ResumeLayout(false);
+            this.pnlDGV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddedProducts)).EndInit();
+            this.pnlCalculation.ResumeLayout(false);
+            this.pnlCalculation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -413,5 +644,24 @@
         private System.Windows.Forms.Label lblRate;
         private System.Windows.Forms.TextBox txtInventory;
         private System.Windows.Forms.Label lblInventory;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel pnlDGV;
+        private System.Windows.Forms.Label lblDGVTitle;
+        private System.Windows.Forms.DataGridView dgvAddedProducts;
+        private System.Windows.Forms.Panel pnlCalculation;
+        private System.Windows.Forms.Label lblCalc;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblDiscount;
+        private System.Windows.Forms.Label lblVat;
+        private System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.TextBox txtReturnAmount;
+        private System.Windows.Forms.TextBox txtPaidAmount;
+        private System.Windows.Forms.TextBox txtGT;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TextBox txtVAT;
+        private System.Windows.Forms.Label lblReturnAmount;
+        private System.Windows.Forms.Label lblPaidAmount;
+        private System.Windows.Forms.Label lblGT;
+        private System.Windows.Forms.Button btnSave;
     }
 }
