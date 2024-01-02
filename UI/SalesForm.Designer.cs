@@ -32,8 +32,23 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.lblTop = new System.Windows.Forms.Label();
+            this.pnlDeaCust = new System.Windows.Forms.Panel();
+            this.lblCustTitle = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblBillDate = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            this.pnlDeaCust.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -70,12 +85,154 @@
             this.lblTop.TabIndex = 1;
             this.lblTop.Text = "PURCHASE and SALES";
             // 
+            // pnlDeaCust
+            // 
+            this.pnlDeaCust.Controls.Add(this.dtpBillDate);
+            this.pnlDeaCust.Controls.Add(this.txtAddress);
+            this.pnlDeaCust.Controls.Add(this.txtName);
+            this.pnlDeaCust.Controls.Add(this.txtContact);
+            this.pnlDeaCust.Controls.Add(this.txtEmail);
+            this.pnlDeaCust.Controls.Add(this.txtSearch);
+            this.pnlDeaCust.Controls.Add(this.lblBillDate);
+            this.pnlDeaCust.Controls.Add(this.lblAddress);
+            this.pnlDeaCust.Controls.Add(this.lblContact);
+            this.pnlDeaCust.Controls.Add(this.lblSearch);
+            this.pnlDeaCust.Controls.Add(this.lblName);
+            this.pnlDeaCust.Controls.Add(this.lblEmail);
+            this.pnlDeaCust.Controls.Add(this.lblCustTitle);
+            this.pnlDeaCust.Location = new System.Drawing.Point(12, 54);
+            this.pnlDeaCust.Name = "pnlDeaCust";
+            this.pnlDeaCust.Size = new System.Drawing.Size(1124, 123);
+            this.pnlDeaCust.TabIndex = 5;
+            // 
+            // lblCustTitle
+            // 
+            this.lblCustTitle.AutoSize = true;
+            this.lblCustTitle.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustTitle.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblCustTitle.Location = new System.Drawing.Point(13, 15);
+            this.lblCustTitle.Name = "lblCustTitle";
+            this.lblCustTitle.Size = new System.Drawing.Size(248, 18);
+            this.lblCustTitle.TabIndex = 0;
+            this.lblCustTitle.Text = "Dealer and Customer Details";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(303, 52);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(45, 16);
+            this.lblEmail.TabIndex = 1;
+            this.lblEmail.Text = "Email";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(13, 96);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(48, 16);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Name";
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(13, 50);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(61, 16);
+            this.lblSearch.TabIndex = 3;
+            this.lblSearch.Text = "Search";
+            // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.Location = new System.Drawing.Point(303, 96);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(66, 16);
+            this.lblContact.TabIndex = 4;
+            this.lblContact.Text = "Contact";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(594, 54);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(70, 16);
+            this.lblAddress.TabIndex = 5;
+            this.lblAddress.Text = "Address";
+            // 
+            // lblBillDate
+            // 
+            this.lblBillDate.AutoSize = true;
+            this.lblBillDate.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillDate.Location = new System.Drawing.Point(839, 54);
+            this.lblBillDate.Name = "lblBillDate";
+            this.lblBillDate.Size = new System.Drawing.Size(68, 16);
+            this.lblBillDate.TabIndex = 6;
+            this.lblBillDate.Text = "Bill Date";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(97, 50);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(164, 22);
+            this.txtSearch.TabIndex = 7;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(385, 52);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(164, 22);
+            this.txtEmail.TabIndex = 8;
+            // 
+            // txtContact
+            // 
+            this.txtContact.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContact.Location = new System.Drawing.Point(385, 94);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(164, 22);
+            this.txtContact.TabIndex = 10;
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(97, 96);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(164, 22);
+            this.txtName.TabIndex = 11;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(690, 48);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(132, 64);
+            this.txtAddress.TabIndex = 13;
+            // 
+            // dtpBillDate
+            // 
+            this.dtpBillDate.CalendarFont = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBillDate.Location = new System.Drawing.Point(913, 54);
+            this.dtpBillDate.Name = "dtpBillDate";
+            this.dtpBillDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpBillDate.TabIndex = 14;
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1148, 493);
+            this.Controls.Add(this.pnlDeaCust);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalesForm";
@@ -84,6 +241,8 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            this.pnlDeaCust.ResumeLayout(false);
+            this.pnlDeaCust.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -93,5 +252,19 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.Label lblTop;
+        private System.Windows.Forms.Panel pnlDeaCust;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblCustTitle;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblBillDate;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.DateTimePicker dtpBillDate;
     }
 }

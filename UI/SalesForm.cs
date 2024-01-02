@@ -21,5 +21,10 @@ namespace Wiko_Store.UI
         {
             this.Close();
         }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
