@@ -52,6 +52,12 @@
             this.lblProdSearch = new System.Windows.Forms.Label();
             this.txtProdName = new System.Windows.Forms.TextBox();
             this.lblProdName = new System.Windows.Forms.Label();
+            this.txtInventory = new System.Windows.Forms.TextBox();
+            this.lblInventory = new System.Windows.Forms.Label();
+            this.txtRate = new System.Windows.Forms.TextBox();
+            this.lblRate = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.pnlDeaCust.SuspendLayout();
@@ -235,6 +241,12 @@
             // 
             // pnlProductDetails
             // 
+            this.pnlProductDetails.Controls.Add(this.txtQuantity);
+            this.pnlProductDetails.Controls.Add(this.lblQuantity);
+            this.pnlProductDetails.Controls.Add(this.txtRate);
+            this.pnlProductDetails.Controls.Add(this.lblRate);
+            this.pnlProductDetails.Controls.Add(this.txtInventory);
+            this.pnlProductDetails.Controls.Add(this.lblInventory);
             this.pnlProductDetails.Controls.Add(this.txtProdName);
             this.pnlProductDetails.Controls.Add(this.lblProdName);
             this.pnlProductDetails.Controls.Add(this.txtProdSearch);
@@ -292,6 +304,60 @@
             this.lblProdName.TabIndex = 12;
             this.lblProdName.Text = "Name";
             // 
+            // txtInventory
+            // 
+            this.txtInventory.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInventory.Location = new System.Drawing.Point(387, 47);
+            this.txtInventory.Name = "txtInventory";
+            this.txtInventory.Size = new System.Drawing.Size(164, 22);
+            this.txtInventory.TabIndex = 15;
+            // 
+            // lblInventory
+            // 
+            this.lblInventory.AutoSize = true;
+            this.lblInventory.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventory.Location = new System.Drawing.Point(303, 47);
+            this.lblInventory.Name = "lblInventory";
+            this.lblInventory.Size = new System.Drawing.Size(78, 16);
+            this.lblInventory.TabIndex = 14;
+            this.lblInventory.Text = "Inventory";
+            // 
+            // txtRate
+            // 
+            this.txtRate.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRate.Location = new System.Drawing.Point(387, 87);
+            this.txtRate.Name = "txtRate";
+            this.txtRate.Size = new System.Drawing.Size(164, 22);
+            this.txtRate.TabIndex = 17;
+            // 
+            // lblRate
+            // 
+            this.lblRate.AutoSize = true;
+            this.lblRate.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRate.Location = new System.Drawing.Point(303, 87);
+            this.lblRate.Name = "lblRate";
+            this.lblRate.Size = new System.Drawing.Size(42, 16);
+            this.lblRate.TabIndex = 16;
+            this.lblRate.Text = "Rate";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(678, 49);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(164, 22);
+            this.txtQuantity.TabIndex = 19;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(594, 49);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(69, 16);
+            this.lblQuantity.TabIndex = 18;
+            this.lblQuantity.Text = "Quantity";
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,5 +407,11 @@
         private System.Windows.Forms.Label lblProdName;
         private System.Windows.Forms.TextBox txtProdSearch;
         private System.Windows.Forms.Label lblProdSearch;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.TextBox txtRate;
+        private System.Windows.Forms.Label lblRate;
+        private System.Windows.Forms.TextBox txtInventory;
+        private System.Windows.Forms.Label lblInventory;
     }
 }
