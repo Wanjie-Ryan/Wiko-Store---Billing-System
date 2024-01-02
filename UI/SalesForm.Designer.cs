@@ -48,6 +48,10 @@
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
             this.pnlProductDetails = new System.Windows.Forms.Panel();
             this.lblProductDetails = new System.Windows.Forms.Label();
+            this.txtProdSearch = new System.Windows.Forms.TextBox();
+            this.lblProdSearch = new System.Windows.Forms.Label();
+            this.txtProdName = new System.Windows.Forms.TextBox();
+            this.lblProdName = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.pnlDeaCust.SuspendLayout();
@@ -215,10 +219,10 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(690, 48);
+            this.txtAddress.Location = new System.Drawing.Point(684, 48);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(132, 64);
+            this.txtAddress.Size = new System.Drawing.Size(138, 64);
             this.txtAddress.TabIndex = 13;
             // 
             // dtpBillDate
@@ -231,10 +235,14 @@
             // 
             // pnlProductDetails
             // 
+            this.pnlProductDetails.Controls.Add(this.txtProdName);
+            this.pnlProductDetails.Controls.Add(this.lblProdName);
+            this.pnlProductDetails.Controls.Add(this.txtProdSearch);
+            this.pnlProductDetails.Controls.Add(this.lblProdSearch);
             this.pnlProductDetails.Controls.Add(this.lblProductDetails);
             this.pnlProductDetails.Location = new System.Drawing.Point(12, 183);
             this.pnlProductDetails.Name = "pnlProductDetails";
-            this.pnlProductDetails.Size = new System.Drawing.Size(1124, 111);
+            this.pnlProductDetails.Size = new System.Drawing.Size(1124, 118);
             this.pnlProductDetails.TabIndex = 6;
             // 
             // lblProductDetails
@@ -247,6 +255,42 @@
             this.lblProductDetails.Size = new System.Drawing.Size(138, 18);
             this.lblProductDetails.TabIndex = 1;
             this.lblProductDetails.Text = "Product Details";
+            // 
+            // txtProdSearch
+            // 
+            this.txtProdSearch.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdSearch.Location = new System.Drawing.Point(97, 41);
+            this.txtProdSearch.Name = "txtProdSearch";
+            this.txtProdSearch.Size = new System.Drawing.Size(164, 22);
+            this.txtProdSearch.TabIndex = 9;
+            // 
+            // lblProdSearch
+            // 
+            this.lblProdSearch.AutoSize = true;
+            this.lblProdSearch.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProdSearch.Location = new System.Drawing.Point(13, 41);
+            this.lblProdSearch.Name = "lblProdSearch";
+            this.lblProdSearch.Size = new System.Drawing.Size(61, 16);
+            this.lblProdSearch.TabIndex = 8;
+            this.lblProdSearch.Text = "Search";
+            // 
+            // txtProdName
+            // 
+            this.txtProdName.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdName.Location = new System.Drawing.Point(97, 85);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(164, 22);
+            this.txtProdName.TabIndex = 13;
+            // 
+            // lblProdName
+            // 
+            this.lblProdName.AutoSize = true;
+            this.lblProdName.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProdName.Location = new System.Drawing.Point(13, 85);
+            this.lblProdName.Name = "lblProdName";
+            this.lblProdName.Size = new System.Drawing.Size(48, 16);
+            this.lblProdName.TabIndex = 12;
+            this.lblProdName.Text = "Name";
             // 
             // SalesForm
             // 
@@ -293,5 +337,9 @@
         private System.Windows.Forms.DateTimePicker dtpBillDate;
         private System.Windows.Forms.Panel pnlProductDetails;
         private System.Windows.Forms.Label lblProductDetails;
+        private System.Windows.Forms.TextBox txtProdName;
+        private System.Windows.Forms.Label lblProdName;
+        private System.Windows.Forms.TextBox txtProdSearch;
+        private System.Windows.Forms.Label lblProdSearch;
     }
 }
