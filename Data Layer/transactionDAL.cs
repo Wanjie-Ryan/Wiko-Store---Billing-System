@@ -47,7 +47,22 @@ namespace Wiko_Store.Data_Layer
                 // The difference between Execute Non query and Execute Scalar is that, Execute Non Query returns the number of rows affected after executing the query, while /n
                 // Execute Scalar returns the first column of the first row in the result set by the query.
 
+                object o = cmd.ExecuteScalar();
 
+                // if the query is executed successfully, then the value will not be null, else it will be null
+
+                if (0 != null)
+                {
+                    // query executed successfully
+
+                    transactionID = int.Parse(o.ToString());
+                    isSuccess = true;
+                }
+                else
+                {
+                    // failed to execute query
+                    isSuccess = false;
+                }
 
             }
             catch(Exception ex)
