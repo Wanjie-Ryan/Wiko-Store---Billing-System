@@ -18,6 +18,8 @@ namespace Wiko_Store
             InitializeComponent();
         }
 
+        // set a public static method to specify whether the form is purchase or sales
+        public static string transactionType;
         private void FormUserDashboard_Load(object sender, EventArgs e)
         {
             lblLoggedInUser.Text = LoginForm.loggedIn;
@@ -33,12 +35,18 @@ namespace Wiko_Store
         {
             SalesForm sf = new SalesForm();
             sf.Show();
+
+            // set value on transactionType static method
+
+            transactionType = "Purchase";
         }
 
         private void salesFormsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SalesForm sf = new SalesForm();
-            sf.Show();
+            SalesForm sales = new SalesForm();
+            sales.Show();
+
+            transactionType = "sales";
         }
     }
 }

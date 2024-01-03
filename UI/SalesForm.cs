@@ -26,5 +26,10 @@ namespace Wiko_Store.UI
         {
 
         }
+
+        private void SalesForm_Load(object sender, EventArgs e)
+        {
+            // get the transactionType value from the formuserdashboard
+        }
     }
 }
