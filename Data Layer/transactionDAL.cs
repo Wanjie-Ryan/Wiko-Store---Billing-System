@@ -16,7 +16,11 @@ namespace Wiko_Store.Data_Layer
 
 
         public bool InsertTransactions(transactionLogics t, out int transactionID)
+
         {
+
+            // the transactionID will be used to store the id of the inserted transaction
+
             bool isSuccess = false;
 
             // set the out transactionID value to -1
@@ -33,6 +37,7 @@ namespace Wiko_Store.Data_Layer
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
+                // parameterized queries such as these, help in preventing sql injections, by treating user input as data rather than executable code.
                 cmd.Parameters.AddWithValue("@type", t.type);
                 cmd.Parameters.AddWithValue("@dea_cust_id", t.dea_cust_id);
                 cmd.Parameters.AddWithValue("@total", t.total);
@@ -45,7 +50,7 @@ namespace Wiko_Store.Data_Layer
 
                 // for this, we will use the Execute Scalar, instead of the Execute Non Query
                 // The difference between Execute Non query and Execute Scalar is that, Execute Non Query returns the number of rows affected after executing the query, while /n
-                // Execute Scalar returns the first column of the first row in the result set by the query.
+                // Execute Scalar returns the first column of the first row in the result set by the query. The first row of the first column, in this case is the ID of the inserted transaction.
 
                 object o = cmd.ExecuteScalar();
 
@@ -54,6 +59,7 @@ namespace Wiko_Store.Data_Layer
                 if (0 != null)
                 {
                     // query executed successfully
+                    // the transactionID is then assigned a parsed value of the ID that is returned from the query
 
                     transactionID = int.Parse(o.ToString());
                     isSuccess = true;

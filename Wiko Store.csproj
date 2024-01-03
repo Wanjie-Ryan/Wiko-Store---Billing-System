@@ -52,6 +52,7 @@
     <Compile Include="Data Layer\LoginDAL.cs" />
     <Compile Include="Data Layer\productsDAL.cs" />
     <Compile Include="Data Layer\transactionDAL.cs" />
+    <Compile Include="Data Layer\transactionDetailsDAL.cs" />
     <Compile Include="Data Layer\UserDAL.cs" />
     <Compile Include="Logics\CategoryLogics.cs" />
     <Compile Include="Logics\CustomerLogics.cs" />
