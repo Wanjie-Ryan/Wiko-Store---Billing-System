@@ -228,6 +228,45 @@ namespace Wiko_Store.Data_Layer
 
         }
 
+        // region to search dealer or customer for the transaction module
+
+        public CustomerLogics SearchDealerCustomer (string keyword)
+        {
+            CustomerLogics dc = new CustomerLogics();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // sql query to search dealer or customer based on keywords
+                string sql = "SELECT name, email, contact, address WHERE id LIKE '%" +keyword+ "%' OR name LIKE '%" +keyword+ "%'";
+
+                // create sql dataadapter to execute the query.
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                //
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dc;
+        }
+
+
+
 
     }
 }
