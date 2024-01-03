@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wiko_Store.Data_Layer;
+using Wiko_Store.Logics;
 
 namespace Wiko_Store.UI
 {
@@ -18,6 +20,8 @@ namespace Wiko_Store.UI
             InitializeComponent();
         }
 
+        CustomerDAL cdal = new CustomerDAL();
+        //CustomerLogics cl = new CustomerLogics();   
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,7 +45,34 @@ namespace Wiko_Store.UI
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            // get the keyword from the textbox
+
             string keyword = txtSearch.Text;
+
+            if(keyword == "")
+            {
+                //if the search box is empty, render all the the other textboxes empty too.
+
+                txtName.Text = "";
+                txtEmail.Text = "";
+                txtContact.Text = "";
+                txtAddress.Text = "";
+                return;
+            }
+
+            // write the code to get the details and set the value on textboxes
+
+            CustomerLogics cl = cdal.SearchDealerCustomer(keyword);
+
+            // set the value in the cl to the textboxes
+
+            txtName.Text = cl.name;
+            txtEmail.Text = cl.email;
+            txtContact.Text = cl.contact;
+            txtAddress.Text = cl.address;
+
+
+
         }
     }
 }

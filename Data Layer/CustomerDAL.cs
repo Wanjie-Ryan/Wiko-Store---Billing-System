@@ -241,7 +241,7 @@ namespace Wiko_Store.Data_Layer
             try
             {
                 // sql query to search dealer or customer based on keywords
-                string sql = "SELECT name, email, contact, address WHERE id LIKE '%" +keyword+ "%' OR name LIKE '%" +keyword+ "%'";
+                string sql = "SELECT name, email, contact, address FROM tbl_dealer_customer WHERE id LIKE '%" + keyword+ "%' OR name LIKE '%" +keyword+ "%'";
 
                 // create sql dataadapter to execute the query.
 
