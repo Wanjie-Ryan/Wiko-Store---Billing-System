@@ -251,7 +251,18 @@ namespace Wiko_Store.Data_Layer
 
                 adapter.Fill(dt);
 
-                //
+                // if we have values on dt, we need to save them in the dc logics part
+
+                if(dt.Rows.Count > 0)
+                {
+                    dc.name = dt.Rows[0]["name"].ToString();
+                    dc.email = dt.Rows[0]["email"].ToString();
+                    dc.contact = dt.Rows[0]["contact"].ToString();
+                    dc.address = dt.Rows[0]["address"].ToString();
+
+                }
+
+
             }
             catch(Exception ex)
             {
