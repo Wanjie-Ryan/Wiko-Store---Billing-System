@@ -38,5 +38,10 @@ namespace Wiko_Store.UI
 
             lblTop.Text = type;
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+        }
     }
 }
