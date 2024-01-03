@@ -33,20 +33,20 @@ namespace Wiko_Store
 
         private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SalesForm sf = new SalesForm();
-            sf.Show();
-
             // set value on transactionType static method
 
             transactionType = "Purchase";
+            SalesForm sf = new SalesForm();
+            sf.Show();
+
         }
 
         private void salesFormsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            transactionType = "sales";
             SalesForm sales = new SalesForm();
             sales.Show();
 
-            transactionType = "sales";
         }
     }
 }

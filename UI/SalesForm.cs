@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,12 @@ namespace Wiko_Store.UI
         private void SalesForm_Load(object sender, EventArgs e)
         {
             // get the transactionType value from the formuserdashboard
+
+            string type = FormUserDashboard.transactionType;
+
+            // set the value on lblTop
+
+            lblTop.Text = type;
         }
     }
 }
