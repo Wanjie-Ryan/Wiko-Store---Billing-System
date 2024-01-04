@@ -43,6 +43,13 @@ namespace Wiko_Store.UI
             // set the value on lblTop
 
             lblTop.Text = type;
+
+            // specify the columns for the datagridview
+
+            dt.Columns.Add("Product Name");
+            dt.Columns.Add("Rate");
+            dt.Columns.Add("Quantity");
+            dt.Columns.Add("Total");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -112,13 +119,27 @@ namespace Wiko_Store.UI
             decimal rate = decimal.Parse(txtRate.Text);
             decimal quantity = decimal.Parse(txtQuantity.Text);
 
+            decimal total = rate * quantity;
+
             if (productName == "" )
             {
                 MessageBox.Show("Enter a product first. Try Again!", "Search for a product", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
             }
             else
             {
-                dt.Rows.Add();
+                dt.Rows.Add(productName, rate, quantity, total);
+
+                // show the product in the data grid view
+
+                dgvAddedProducts.DataSource = dt;
+
+                // clear the textboxes after adding the products to the datagrid view
+
+                txtProdSearch.Text = "";
+                txtProdName.Text = "";
+                txtInventory.Text = "";
+                txtRate.Text = "";
+                txtQuantity.Text = "";
             }
         }
     }
