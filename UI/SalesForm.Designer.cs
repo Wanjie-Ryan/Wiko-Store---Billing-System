@@ -373,6 +373,7 @@
             this.txtProdSearch.Name = "txtProdSearch";
             this.txtProdSearch.Size = new System.Drawing.Size(164, 22);
             this.txtProdSearch.TabIndex = 9;
+            this.txtProdSearch.TextChanged += new System.EventHandler(this.txtProdSearch_TextChanged);
             // 
             // lblProdSearch
             // 

@@ -21,6 +21,7 @@ namespace Wiko_Store.UI
         }
 
         CustomerDAL cdal = new CustomerDAL();
+        productsDAL pdal = new productsDAL();
         //CustomerLogics cl = new CustomerLogics();   
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -71,6 +72,22 @@ namespace Wiko_Store.UI
             txtContact.Text = cl.contact;
             txtAddress.Text = cl.address;
 
+
+
+        }
+
+        private void txtProdSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+
+            if(keyword == "")
+            {
+                txtSearch.Text = "";
+                txtName.Text = "";
+                txtRate.Text = "";
+                txtQuantity.Text = "";
+                return;
+            }
 
 
         }

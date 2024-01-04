@@ -275,7 +275,9 @@ namespace Wiko_Store.Data_Layer
 
                 if (dt.Rows.Count > 0)
                 {
-
+                    pl.name = dt.Rows[0]["name"].ToString();
+                    pl.rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+                    pl.quantity = decimal.Parse(dt.Rows[0]["quantity"].ToString());
                 }
             }
             catch(Exception ex)
