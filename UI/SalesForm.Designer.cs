@@ -506,6 +506,7 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(164, 22);
             this.txtDiscount.TabIndex = 13;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtVAT
             // 

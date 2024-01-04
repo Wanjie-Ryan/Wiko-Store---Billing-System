@@ -153,5 +153,21 @@ namespace Wiko_Store.UI
                 txtQuantity.Text = "";
             }
         }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+
+            string value = txtDiscount.Text;
+
+            if(value == "")
+            {
+                MessageBox.Show("Please provide the discount, if applicable");
+            }
+            else
+            {
+
+                decimal discount = decimal.Parse(txtDiscount.Text);
+            }
+        }
     }
 }
