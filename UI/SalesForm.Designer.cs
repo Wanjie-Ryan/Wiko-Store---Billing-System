@@ -468,6 +468,7 @@
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(164, 22);
             this.txtSubTotal.TabIndex = 17;
+            this.txtSubTotal.Text = "0";
             // 
             // txtReturnAmount
             // 

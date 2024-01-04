@@ -121,6 +121,13 @@ namespace Wiko_Store.UI
 
             decimal total = rate * quantity;
 
+            // display the subtotal in the textbox
+            // get the subtotal value from the textbox
+
+            decimal subTotal = decimal.Parse(txtSubTotal.Text);
+            Console.WriteLine(subTotal);
+            subTotal = subTotal + total;
+
             if (productName == "" )
             {
                 MessageBox.Show("Enter a product first. Try Again!", "Search for a product", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
@@ -132,6 +139,10 @@ namespace Wiko_Store.UI
                 // show the product in the data grid view
 
                 dgvAddedProducts.DataSource = dt;
+
+                // display the subtotal in textbox
+
+                txtSubTotal.Text = subTotal.ToString();
 
                 // clear the textboxes after adding the products to the datagrid view
 
