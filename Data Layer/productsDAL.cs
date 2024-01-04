@@ -254,6 +254,42 @@ namespace Wiko_Store.Data_Layer
             return dt;
         }
 
+        // searching for a product in the transaction module
+        // the name ProductsLogic is the method name
+        public ProductsLogic SearchProductTransaction(string keyword)
+        {
+            ProductsLogic pl = new ProductsLogic();
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+
+            try
+            {
+                string sql = "SELECT name, rate, quantity, FROM tbl_products WHERE id LIKE '%" +keyword+ "%' OR name LIKE '%" +keyword+ "%'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return pl;
+        }
+
         
 
     }
