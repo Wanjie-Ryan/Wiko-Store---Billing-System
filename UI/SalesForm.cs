@@ -82,12 +82,23 @@ namespace Wiko_Store.UI
 
             if(keyword == "")
             {
-                txtSearch.Text = "";
-                txtName.Text = "";
+                //txtProdSearch.Text = "";
+                txtProdName.Text = "";
+                txtInventory.Text = "";
                 txtRate.Text = "";
                 txtQuantity.Text = "";
                 return;
             }
+
+            ProductsLogic pl = pdal.SearchProductTransaction(keyword);
+
+            // set the value in the pl to the textboxes
+
+            txtProdName.Text = pl.name;
+            txtRate.Text = pl.rate.ToString();
+            txtInventory.Text =pl.quantity.ToString();
+
+            //convert the rate and quantity to a string beacuse they are in decimal datatype.
 
 
         }
