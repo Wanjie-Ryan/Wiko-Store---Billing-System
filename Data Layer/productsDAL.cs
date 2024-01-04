@@ -259,13 +259,13 @@ namespace Wiko_Store.Data_Layer
         public ProductsLogic SearchProductTransaction(string keyword)
         {
             ProductsLogic pl = new ProductsLogic();
-            DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
 
 
             try
             {
-                string sql = "SELECT name, rate, quantity, FROM tbl_products WHERE id LIKE '%" +keyword+ "%' OR name LIKE '%" +keyword+ "%'";
+                string sql = "SELECT name, rate, quantity FROM tbl_products WHERE id LIKE '%" +keyword+ "%' OR name LIKE '%" +keyword+ "%'";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
 

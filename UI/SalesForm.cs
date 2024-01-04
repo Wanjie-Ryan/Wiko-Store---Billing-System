@@ -78,7 +78,7 @@ namespace Wiko_Store.UI
 
         private void txtProdSearch_TextChanged(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text;
+            string keyword = txtProdSearch.Text;
 
             if(keyword == "")
             {
