@@ -22,6 +22,7 @@ namespace Wiko_Store.UI
 
         CustomerDAL cdal = new CustomerDAL();
         productsDAL pdal = new productsDAL();
+        DataTable dt = new DataTable();
         //CustomerLogics cl = new CustomerLogics();   
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -101,6 +102,24 @@ namespace Wiko_Store.UI
             //convert the rate and quantity to a string beacuse they are in decimal datatype.
 
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // get product name, rate, and quantity the customer wants to buy
+
+            string productName = txtProdName.Text;
+            decimal rate = decimal.Parse(txtRate.Text);
+            decimal quantity = decimal.Parse(txtQuantity.Text);
+
+            if (productName == "" )
+            {
+                MessageBox.Show("Enter a product first. Try Again!", "Search for a product", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                dt.Rows.Add();
+            }
         }
     }
 }
