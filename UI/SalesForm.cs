@@ -125,7 +125,7 @@ namespace Wiko_Store.UI
             // get the subtotal value from the textbox
 
             decimal subTotal = decimal.Parse(txtSubTotal.Text);
-            Console.WriteLine(subTotal);
+            //Console.WriteLine(subTotal);
             subTotal = subTotal + total;
 
             if (productName == "" )
@@ -161,12 +161,26 @@ namespace Wiko_Store.UI
 
             if(value == "")
             {
-                MessageBox.Show("Please provide the discount, if applicable");
+                MessageBox.Show("Please provide the discount, if applicable", "Discount not provided!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
             else
             {
 
+                // getting the sub total to perform the grandtotal calculation
+                decimal subTotal = decimal.Parse(txtSubTotal.Text);
+
+                // getting the discount in form of decimal value
                 decimal discount = decimal.Parse(txtDiscount.Text);
+
+                // calculating the grand total based n the discount and subTotal
+
+                decimal grandTotal = ((100 - discount) / 100) * subTotal;
+
+                // display the grandTotal in the textbox
+
+                txtGT.Text = grandTotal.ToString();
+
+
             }
         }
     }
