@@ -220,5 +220,10 @@ namespace Wiko_Store.UI
 
             txtReturnAmount.Text = ReturnAmount.ToString();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
