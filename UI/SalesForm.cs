@@ -209,7 +209,16 @@ namespace Wiko_Store.UI
 
         private void txtPaidAmount_TextChanged(object sender, EventArgs e)
         {
+            // getting the paid amount from the textbox, and also the grandTotal
 
+            decimal grandTotal = decimal.Parse(txtGT.Text);
+            decimal paidAmount = decimal.Parse(txtPaidAmount.Text);
+
+            decimal ReturnAmount = paidAmount - grandTotal;
+
+            // display the change
+
+            txtReturnAmount.Text = ReturnAmount.ToString();
         }
     }
 }
