@@ -488,6 +488,7 @@
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.Size = new System.Drawing.Size(164, 22);
             this.txtPaidAmount.TabIndex = 15;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
             // 
             // txtGT
             // 
@@ -515,6 +516,7 @@
             this.txtVAT.Name = "txtVAT";
             this.txtVAT.Size = new System.Drawing.Size(164, 22);
             this.txtVAT.TabIndex = 12;
+            this.txtVAT.TextChanged += new System.EventHandler(this.txtVAT_TextChanged);
             // 
             // lblReturnAmount
             // 

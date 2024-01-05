@@ -183,5 +183,33 @@ namespace Wiko_Store.UI
 
             }
         }
+
+        private void txtVAT_TextChanged(object sender, EventArgs e)
+        {
+            string vatValue = txtVAT.Text;
+
+            if(vatValue == "")
+            {
+                MessageBox.Show("Calculate the discount and set the GrandTotal first", "Calculate Discount", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // getting the vat from the textbox
+
+                decimal gt = decimal.Parse(txtGT.Text);
+                decimal vat = decimal.Parse(txtVAT.Text);
+
+                decimal GrandTotal = (100 + vat)/100 *gt;
+
+                // displaying new grandtotal with vat
+
+                txtGT.Text = GrandTotal.ToString();
+            }
+        }
+
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
