@@ -23,6 +23,7 @@ namespace Wiko_Store.UI
         CustomerDAL cdal = new CustomerDAL();
         productsDAL pdal = new productsDAL();
         DataTable dt = new DataTable();
+        UserDAL udal = new UserDAL();
         //CustomerLogics cl = new CustomerLogics();   
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -232,6 +233,24 @@ namespace Wiko_Store.UI
             // getting the id of the dealer or customer
             // get the name of the delaer or customer that was searched for
             string deaCustName = txtName.Text;
+
+            CustomerLogics cl = cdal.GetDeaCustID(deaCustName);
+
+            tl.dea_cust_id = cl.id;
+
+            tl.total = decimal.Parse(txtGT.Text);
+
+            tl.transaction_date = DateTime.Now;
+            tl.tax = decimal.Parse(txtVAT.Text);
+            tl.discount = decimal.Parse(txtDiscount.Text);
+
+            // get the id of the user who has been logged in
+
+            string loggeduser = LoginForm.loggedIn;
+
+            UserLogics ul = udal.GetIDFromUsername(loggeduser);
+
+            tl.added_by = ul.id;
 
 
         }
