@@ -223,6 +223,16 @@ namespace Wiko_Store.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // get the details from the form
+
+            transactionLogics tl = new transactionLogics();
+
+            tl.type = lblTop.Text;
+
+            // getting the id of the dealer or customer
+            // get the name of the delaer or customer that was searched for
+            string deaCustName = txtName.Text;
+
 
         }
     }
