@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using Wiko_Store.Data_Layer;
 using Wiko_Store.Logics;
@@ -24,6 +25,9 @@ namespace Wiko_Store.UI
         productsDAL pdal = new productsDAL();
         DataTable dt = new DataTable();
         UserDAL udal = new UserDAL();
+        transactionDAL tdal = new transactionDAL();
+        transactionDetailsDAL tdetail = new transactionDetailsDAL();
+
         //CustomerLogics cl = new CustomerLogics();   
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -251,6 +255,33 @@ namespace Wiko_Store.UI
             UserLogics ul = udal.GetIDFromUsername(loggeduser);
 
             tl.added_by = ul.id;
+
+            tl.transactionDetails = dt;
+
+            // creating a boolean variable to check if the transaction was successful or not
+
+            bool success = false;
+
+           using(TransactionScope scope = new TransactionScope())
+            {
+                int transactionID = -1;
+
+                // create a boolean variable and insert transaction
+
+                bool w = tdal.InsertTransactions(tl, out transactionID);
+
+                // use for loop to insert transaction details
+
+                for(int i =0; i<dt.Rows.Count; i++)
+                {
+                    // get all the details of the product
+
+
+                }
+
+
+
+            }
 
 
         }
