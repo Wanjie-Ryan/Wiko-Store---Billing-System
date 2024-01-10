@@ -281,6 +281,12 @@ namespace Wiko_Store.UI
                     // get the product name and convert it to id
 
                     string productName = txtProdName.Text;
+
+                    ProductsLogic pl = pdal.GetIDByProductName(productName);
+
+                    tdl.product_id = pl.id;
+
+
                 }
 
 
