@@ -302,7 +302,18 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
+                string sql = "SELECT name from tbl_products WHERE name = '%" +prodName+ "%' ";
 
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    pl.id = int.Parse(dt.Rows[0]["id"].ToString());
+                }
 
             }
             catch(Exception ex)
