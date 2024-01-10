@@ -292,6 +292,31 @@ namespace Wiko_Store.Data_Layer
             return pl;
         }
 
+        public ProductsLogic GetIDByProductName(string prodName)
+        {
+            ProductsLogic pl = new ProductsLogic();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+
+            try
+            {
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return pl;
+        }
+
         
 
     }

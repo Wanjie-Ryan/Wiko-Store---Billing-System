@@ -276,7 +276,11 @@ namespace Wiko_Store.UI
                 {
                     // get all the details of the product
 
+                    transactionDetailsLogics tdl = new transactionDetailsLogics();
 
+                    // get the product name and convert it to id
+
+                    string productName = txtProdName.Text;
                 }
 
 
