@@ -465,7 +465,11 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
+                decimal currentqty = GetProductQty(productId);
 
+                decimal newQty = currentqty - qty;
+
+                isSuccess = UpdateQuantity(productId, newQty);
             }
             catch(Exception ex)
             {
