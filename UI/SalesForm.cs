@@ -216,7 +216,7 @@ namespace Wiko_Store.UI
         {
             // getting the paid amount from the textbox, and also the grandTotal
 
-            decimal grandTotal = decimal.Parse(txtGT.Text);
+            decimal grandTotal = Math.Round(decimal.Parse(txtGT.Text),2);
             decimal paidAmount = decimal.Parse(txtPaidAmount.Text);
 
             decimal ReturnAmount = paidAmount - grandTotal;
@@ -294,14 +294,54 @@ namespace Wiko_Store.UI
 
                     // getting the total from the transaction DT
 
-                    tdl.total = decimal.Parse(dt.Rows[i][3].ToString());
+                    tdl.total = Math.Round(decimal.Parse(dt.Rows[i][3].ToString()),2);
 
                     tdl.dea_cust_id = cl.id;
 
                     tdl.added_date = DateTime.Now;
                     tdl.added_by = ul.id;
 
+                    // insert the data into the db
+
+                    bool y = tdetail.InsertTransDetails(tdl);
+
+                    
+                    success = w && y;
+
+
                 }
+
+
+                if (success == true)
+                {
+                    scope.Complete();
+                    MessageBox.Show("Transaction completed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // clear the datagrid view and textboxes
+
+                    dgvAddedProducts.DataSource = null;
+                    dgvAddedProducts.Rows.Clear();
+                    txtSearch.Text = "";
+                    txtName.Text = "";
+                    txtContact.Text = "";
+                    txtAddress.Text = "";
+                    txtProdSearch.Text = "";
+                    txtProdName.Text = "";
+                    txtInventory.Text = "";
+                    txtRate.Text = "";
+                    txtQuantity.Text = "";
+                    txtSubTotal.Text = "0";
+                    txtDiscount.Text = "0";
+                    txtVAT.Text = "0";
+                    txtGT.Text = "0";
+                    txtPaidAmount.Text = "0";
+                    txtReturnAmount.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Transaction failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
 
 
 

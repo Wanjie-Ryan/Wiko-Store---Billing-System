@@ -56,7 +56,7 @@ namespace Wiko_Store.Data_Layer
 
                 // if the query is executed successfully, then the value will not be null, else it will be null
 
-                if (0 != null)
+                if (o != null)
                 {
                     // query executed successfully
                     // the transactionID is then assigned a parsed value of the ID that is returned from the query
