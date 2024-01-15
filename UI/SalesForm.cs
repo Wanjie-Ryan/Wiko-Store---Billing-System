@@ -286,6 +286,20 @@ namespace Wiko_Store.UI
 
                     tdl.product_id = pl.id;
 
+                    // getting the rate from the transaction DT
+                    tdl.rate = decimal.Parse(dt.Rows[i][1].ToString());
+
+                    // getting the quantity from the transaction DT
+                    tdl.quantity = decimal.Parse(dt.Rows[i][2].ToString());
+
+                    // getting the total from the transaction DT
+
+                    tdl.total = decimal.Parse(dt.Rows[i][3].ToString());
+
+                    tdl.dea_cust_id = cl.id;
+
+                    tdl.added_date = DateTime.Now;
+                    tdl.added_by = ul.id;
 
                 }
 
