@@ -342,7 +342,24 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
-                string sql = " ";
+                string sql = "SELECT quantity FROM tbl_products WHERE id= '%" + productId + "%' ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                // check if the dataTable has values or not
+
+                if(dt.Rows.Count > 0)
+                {
+                    qty = decimal.Parse(dt.Rows[0]["quantity"].ToString());
+                }
+
+
 
             }
 
@@ -358,6 +375,19 @@ namespace Wiko_Store.Data_Layer
 
             return qty;
 
+        }
+
+        // METHOD TO UPDATE THE QUANTITY IN THE DATABASE
+
+        public bool UpdateQuantity(int productId, decimal qty)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            
+
+            return isSuccess;
         }
 
         
