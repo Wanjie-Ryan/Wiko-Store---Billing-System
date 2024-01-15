@@ -280,7 +280,9 @@ namespace Wiko_Store.UI
 
                     // get the product name and convert it to id
 
-                    string productName = txtProdName.Text;
+                   // string productName = txtProdName.Text;
+
+                    string productName = dt.Rows[i][0].ToString();
 
                     ProductsLogic pl = pdal.GetIDByProductName(productName);
 
@@ -314,6 +316,7 @@ namespace Wiko_Store.UI
 
                 if (success == true)
                 {
+                    // specifies that the transaction is completed and ready to be inserted to the DB
                     scope.Complete();
                     MessageBox.Show("Transaction completed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

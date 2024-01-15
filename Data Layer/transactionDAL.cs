@@ -32,7 +32,7 @@ namespace Wiko_Store.Data_Layer
 
             try
             {
-                string sql = "INSERT INTO tbl_transactions (type, dea_cust_id, total, transaction_date, tax, discount, added_by) VALUES (@type, @dea_cust_id, @total, @transaction_date, @tax, @discount, @added_by)";
+                string sql = "INSERT INTO tbl_transactions (type, dea_cust_id, total, transaction_date, tax, discount, added_by) VALUES (@type, @dea_cust_id, @total, @transaction_date, @tax, @discount, @added_by); SELECT @@IDENTITY;";
 
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
