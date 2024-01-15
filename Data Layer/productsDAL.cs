@@ -328,6 +328,38 @@ namespace Wiko_Store.Data_Layer
             return pl;
         }
 
+        // METHOD TO GET CURRENT QUANTITY FROM THE DB BASED ON PRODUCTID
+
+        public decimal GetProductQty(int productId)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // create a decimal varibale and set it to 0
+
+            decimal qty = 0;
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = " ";
+
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return qty;
+
+        }
+
         
 
     }
