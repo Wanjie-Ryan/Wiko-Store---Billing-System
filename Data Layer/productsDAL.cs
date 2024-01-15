@@ -438,7 +438,9 @@ namespace Wiko_Store.Data_Layer
 
                 decimal newQty = currentQty +Increaseqty;
 
+                // update the product quantity
 
+                isSuccess = UpdateQuantity(productId, newQty);
 
             }
             catch(Exception ex)
@@ -453,6 +455,31 @@ namespace Wiko_Store.Data_Layer
             return isSuccess;
         }
 
+        // METHOD TO DECREASE PRODUCT QUANTITY
+
+        public bool DecreaseProduct(int productId, decimal qty)
+        {
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
+            return isSuccess;
+        }
         
 
     }
