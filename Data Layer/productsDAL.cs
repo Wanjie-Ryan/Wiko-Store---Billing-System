@@ -394,6 +394,52 @@ namespace Wiko_Store.Data_Layer
                 cmd.Parameters.AddWithValue("@quantity", qty);
                 cmd.Parameters.AddWithValue("@id", productId);
 
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if(rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isSuccess;
+        }
+
+        // METHOD TO INCREASE PRODUCT
+
+        public bool IncreaseProduct (int productId, decimal Increaseqty)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                // get the current quantity from the DB based on the id of the product
+
+                decimal currentQty = GetProductQty(productId);
+
+                // increase the current quantity by the qty purchased from the dealer
+
+                decimal newQty = currentQty +Increaseqty;
+
+
+
             }
             catch(Exception ex)
             {
