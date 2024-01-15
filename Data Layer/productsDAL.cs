@@ -385,7 +385,24 @@ namespace Wiko_Store.Data_Layer
 
             SqlConnection conn = new SqlConnection(myconnstrng);
 
-            
+            try
+            {
+                string sql = "UPDATE tbl_products SET quantity = '%" +qty + "%' WHERE id = '%" +productId + "%'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@quantity", qty);
+                cmd.Parameters.AddWithValue("@id", productId);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
 
             return isSuccess;
         }
